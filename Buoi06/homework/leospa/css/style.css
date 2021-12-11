@@ -1,0 +1,330 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+html {
+}
+
+body {
+}
+
+.w100pc {
+  width: 100%;
+}
+
+.h100pc {
+  height: 100%;
+}
+
+.container {
+  width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.col-1 {
+  flex-basis: 8.333333%;
+}
+
+.col-2 {
+  flex-basis: 16.666666%;
+}
+
+.col-3 {
+  flex-basis: 25%;
+}
+
+.col-4 {
+  flex-basis: 33.333333%;
+}
+
+.col-5 {
+  flex-basis: 41.666666%;
+}
+
+.col-6 {
+  flex-basis: 50%;
+}
+
+.col-7 {
+  flex-basis: 58.333333%;
+}
+
+.col-8 {
+  flex-basis: 66.666666%;
+}
+
+.col-9 {
+  flex-basis: 75%;
+}
+
+.col-10 {
+  flex-basis: 83.333333%;
+}
+
+.col-11 {
+  flex-basis: 91.666666%;
+}
+
+.col-12 {
+  flex-basis: 100%;
+}
+
+.offset-1 {
+  margin-left: 8.333333%;
+}
+
+.offset-2 {
+  margin-left: 16.666666%;
+}
+
+.offset-3 {
+  margin-left: 25%;
+}
+
+.offset-4 {
+  margin-left: 33.333333%;
+}
+
+.offset-5 {
+  margin-left: 41.666666%;
+}
+
+.offset-6 {
+  margin-left: 50%;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+/* Custom CSS */
+.header {
+}
+
+.logo-wrapper {
+  width: 285px;
+  padding: 0 15px;
+}
+
+.header-menu {
+  padding: 0 15px;
+}
+
+.header-menu .menu-item {
+}
+
+.header-menu .menu-item .menu-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: text-bottom;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #263a41;
+  padding: 0 20px;
+  line-height: 27px;
+}
+
+.banner {
+  padding-top: 90px;
+  padding-bottom: 162px;
+  background-image: url(https://demo.themeies.com/leospa/images/leaf.png);
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 50%;
+  background-size: 12.5%;
+}
+
+.banner-right-img {
+  width: 585px;
+  height: 625px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.banner-content {
+  padding: 0 15px;
+}
+
+.banner-top-line {
+  margin-bottom: 20px;
+}
+
+.banner-top-line p {
+  text-transform: uppercase;
+  font-family: Rufina, sans-serif;
+  font-size: 15px;
+  color: #ff817e;
+  letter-spacing: 1.5px;
+}
+
+.banner-slogan {
+  margin-bottom: 25px;
+}
+
+.banner-slogan h2 {
+  font-family: Rufina, sans-serif;
+  font-size: 60px;
+  color: rgb(30, 37, 40);
+}
+
+.banner-bottom-line {
+  margin-bottom: 50px;
+}
+
+.banner-bottom-line p {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #555555;
+  line-height: 27px;
+  font-weight: lighter;
+}
+
+.banner-buttons {
+}
+
+.banner-buttons .reverse-button {
+  background-color: rgb(255, 129, 126);
+  color: white;
+  padding: 20px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  width: 168px;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.banner-buttons .video-button {
+  width: 44px;
+  height: 44px;
+  background-color: #fcf5ee;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.banner-buttons .video-link {
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: rgb(85, 85, 85);
+}
+
+.about {
+  padding: 50px 0;
+  position: absolute;
+}
+
+/* .about > .row {
+  position: absolute;
+} */
+
+.about-flower-1 {
+  position: absolute;
+  top: 0;
+  left: 16%;
+}
+
+.about-flower-2 {
+  position: absolute;
+  right: 135px;
+  top: 50%;
+}
+
+.about-logo {
+  margin-bottom: 40px;
+}
+
+.about-top-line {
+  margin-bottom: 27px;
+}
+
+.about-top-line p {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  color: #888888;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.about-slogan {
+  margin-bottom: 32px;
+}
+
+.about-slogan h2 {
+  font-family: Rufina, sans-serif;
+  font-size: 42px;
+  color: #1e2528;
+  text-align: center;
+}
+
+.about-button {
+  margin-top: 70px;
+}
+
+.about-button .button-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: #ff817e;
+  padding: 20px 15px;
+  border-radius: 50px;
+  display: inline-block;
+  width: 170px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}

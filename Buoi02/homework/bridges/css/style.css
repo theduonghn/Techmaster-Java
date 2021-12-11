@@ -1,0 +1,112 @@
+body {
+  padding-left: 100px;
+  padding-right: 100px;
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1,
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #0f2c67;
+}
+
+p,
+li {
+  font-size: 17px;
+  text-align: justify;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(59, 108, 199);
+}
+
+.link-active {
+  color: rgb(8, 38, 95);
+  font-weight: bold;
+}
+
+/* .image {
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.polaroid-image {
+  width: 100%;
+}
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ffebcc;
+}
+
+div.polaroid-container {
+  text-align: center;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex-grow: 1;
+}
+.column-75 {
+  flex: 75%;
+}
+.column-25 {
+  flex: 25%;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+}
+
+.li-small-item {
+  margin: 1em;
+  padding: 0.5em;
+  border-style: solid;
+  border-color: rgb(8, 38, 95);
+  border-width: 2px;
+  border-radius: 5px;
+}
