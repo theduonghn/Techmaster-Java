@@ -132,6 +132,14 @@ body {
   align-items: flex-end;
 }
 
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-between {
+  align-content: space-between;
+}
+
 .justify-content-center {
   justify-content: center;
 }
@@ -173,7 +181,7 @@ body {
 }
 
 .banner {
-  position: relative;
+  /* position: relative; */
   padding-top: 90px;
   padding-bottom: 162px;
   background-image: url(https://demo.themeies.com/leospa/images/leaf.png);
@@ -353,11 +361,14 @@ body {
   width: 100%;
 }
 
-.procedures {
+.procedures,
+.blog {
   padding: 50px 0;
 }
 
-.procedures-heading {
+.procedures-heading,
+.blog-heading,
+.contact-heading {
   color: #1e2528;
   font-family: Rufina, sans-serif;
   font-size: 42px;
@@ -365,7 +376,9 @@ body {
   text-align: center;
 }
 
-.procedures-paragraph {
+.procedures-paragraph,
+.blog-paragraph,
+.contact-paragraph {
   color: #888;
   font-family: Roboto, sans-serif;
   font-size: 15px;
@@ -377,18 +390,21 @@ body {
   font-weight: lighter;
 }
 
-.procedures-img-block {
+.procedures-img-block,
+.blog-img-block {
   border: 1px solid #e3e6ea;
   padding: 20px;
   width: 350px;
   margin: 0 15px;
 }
 
-.procedure-img {
+.procedure-img,
+.blog-img {
   margin-bottom: 35px;
 }
 
-.procedures-img-block-heading {
+.procedures-img-block-heading,
+.blog-img-block-heading {
   color: #263a41;
   font-family: Rufina, sans-serif;
   font-size: 22px;
@@ -396,7 +412,8 @@ body {
   text-transform: capitalize;
 }
 
-.procedures-img-block-paragraph {
+.procedures-img-block-paragraph,
+.blog-img-block-paragraph {
   color: #6c6c6f;
   font-family: Roboto, sans-serif;
   font-size: 15px;
@@ -405,11 +422,13 @@ body {
   line-height: 27px;
 }
 
-.procedures-img-block-button {
+.procedures-img-block-button,
+.blog-img-block-button {
   margin-bottom: 30px;
 }
 
-.procedures-img-block-button .button-link {
+.procedures-img-block-button .button-link,
+.blog-img-block-button .button-link {
   text-transform: uppercase;
   text-decoration: none;
   color: white;
@@ -422,4 +441,283 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: bold;
+}
+
+.testimonial {
+  background-color: #fff9f8;
+  padding: 50px 0;
+}
+
+.testimonial .quote-image {
+  margin-bottom: 45px;
+}
+
+.testimonial-paragraph {
+  margin-bottom: 43px;
+  color: #263a41;
+  font-family: Rufina, serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: center;
+}
+
+.testimonial .client-info {
+  width: 100%;
+}
+
+.testimonial .client-image {
+  margin-bottom: 22px;
+}
+
+.testimonial .client-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.testimonial .client-name {
+  margin-bottom: 30px;
+}
+
+.testimonial .client-name p {
+  color: #263a41;
+  font-family: Rufina, serif;
+  font-size: 22px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.testimonial .client-name p span {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+.testimonial .two-dots .dot {
+  background-color: #ffc3c2;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 0px none;
+  margin: 0 3px;
+}
+
+.team {
+  padding: 50px 0;
+}
+
+.team-top {
+  height: 137px;
+  margin-bottom: 70px;
+}
+
+.team-heading {
+  color: #1e2528;
+  font-size: 42px;
+  font-family: Rufina, serif;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.team-paragraph {
+  color: #888888;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 27px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 730px;
+}
+
+.team-image {
+  padding: 0 15px;
+  /* padding-bottom: 30px; */
+}
+
+.team-image img {
+  /* margin-bottom: 30px; */
+}
+
+.team-image h3 {
+  color: #263a41;
+  font-size: 22px;
+  font-family: Rufina, serif;
+  text-align: center;
+}
+
+.team-image p {
+  color: #6c6c6f;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 27px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.team-detail {
+  padding: 30px;
+  width: 290px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 20px #f0f0f0;
+}
+
+.appointment {
+  padding: 50px 0;
+}
+
+.appointment-form {
+  padding-left: 100px;
+  padding-right: 50px;
+  background-color: #fff9f8;
+  height: 100%;
+}
+
+.appointment-form form {
+  height: 100%;
+}
+
+.appointment-form form > .row {
+  height: 100%;
+}
+
+.appointment-form .appointment-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #d4d3d3;
+  color: #999;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.appointment-form .appointment-input::placeholder {
+  font-size: 12px;
+}
+
+.appointment-form .appointment-input.normal-text {
+  text-transform: none;
+}
+
+.appointment-col {
+  padding: 0 5px;
+}
+
+.appointment-form textarea {
+  height: 75px;
+}
+
+.form-button {
+  background-color: #ff817e;
+  border-radius: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0.8;
+  text-transform: uppercase;
+  min-width: 170px;
+  padding: 20px 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border-radius: 50px;
+  border: 0 none;
+}
+
+.contact {
+  padding: 50px 0;
+}
+
+.contact-side .item {
+  margin-bottom: 16px;
+}
+
+.contact-side p {
+  color: #888;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+}
+
+.contact-bottom {
+  width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-input {
+  border: 1px solid #e3e6ea;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 27px;
+}
+
+textarea.contact-input {
+  height: 76px;
+}
+
+textarea {
+  resize: none;
+}
+
+.footer {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background-color: #fff9f8;
+}
+
+.footer-logo {
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-menu {
+  margin-bottom: 40px;
+}
+
+.footer-menu .menu-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #263a41;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.footer-socials {
+  color: #3a414e;
+  margin-bottom: 30px;
+}
+
+.footer-socials i {
+  padding: 0 10px;
+  color: #333;
+}
+
+.copyright {
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  color: #888888;
+  text-align: center;
+}
+
+.copyright a {
+  color: #ff817e;
+  text-decoration: none;
 }
