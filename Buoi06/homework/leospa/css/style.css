@@ -1,6 +1,6 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -173,6 +173,7 @@ body {
 }
 
 .banner {
+  position: relative;
   padding-top: 90px;
   padding-bottom: 162px;
   background-image: url(https://demo.themeies.com/leospa/images/leaf.png);
@@ -264,7 +265,7 @@ body {
 
 .about {
   padding: 50px 0;
-  position: absolute;
+  position: relative;
 }
 
 /* .about > .row {
@@ -303,6 +304,15 @@ body {
   margin-bottom: 32px;
 }
 
+.about-bottom-line p {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #888888;
+  text-align: center;
+  line-height: 27px;
+  width: 920px;
+}
+
 .about-slogan h2 {
   font-family: Rufina, sans-serif;
   font-size: 42px;
@@ -320,6 +330,91 @@ body {
   color: white;
   background-color: #ff817e;
   padding: 20px 15px;
+  border-radius: 50px;
+  display: inline-block;
+  width: 170px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.service {
+  padding: 50px 0;
+}
+
+.service-images {
+  margin-left: -2.5px;
+  margin-right: -2.5px;
+}
+
+.service-img {
+  padding: 0 2.5px;
+  width: 100%;
+}
+
+.procedures {
+  padding: 50px 0;
+}
+
+.procedures-heading {
+  color: #1e2528;
+  font-family: Rufina, sans-serif;
+  font-size: 42px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.procedures-paragraph {
+  color: #888;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  width: 730px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 80px;
+  font-weight: lighter;
+}
+
+.procedures-img-block {
+  border: 1px solid #e3e6ea;
+  padding: 20px;
+  width: 350px;
+  margin: 0 15px;
+}
+
+.procedure-img {
+  margin-bottom: 35px;
+}
+
+.procedures-img-block-heading {
+  color: #263a41;
+  font-family: Rufina, sans-serif;
+  font-size: 22px;
+  margin-bottom: 22px;
+  text-transform: capitalize;
+}
+
+.procedures-img-block-paragraph {
+  color: #6c6c6f;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  margin-bottom: 39px;
+  text-align: center;
+  line-height: 27px;
+}
+
+.procedures-img-block-button {
+  margin-bottom: 30px;
+}
+
+.procedures-img-block-button .button-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: #30383b;
+  padding: 15px;
   border-radius: 50px;
   display: inline-block;
   width: 170px;
