@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lemonchiffon;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #757575;
+  font-size: 13px;
+  font-family: Roboto, sans-serif;
+  line-height: 27px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon-right-caret {
+  display: none;
+  float: right;
+  line-height: 27px;
+  color: tomato;
+}
+
+.menu-1,
+.menu-2,
+.menu-3 {
+  width: 200px;
+  height: 344px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  background-color: white;
+}
+
+.menu-1 {
+  position: relative;
+}
+
+.menu-2,
+.menu-3 {
+  position: absolute;
+  display: none;
+}
+
+.item-1,
+.item-2,
+.item-3 {
+  padding-left: 8px;
+  /* padding-right: 8px; */
+  height: 27px;
+  list-style: none;
+}
+
+.link-1,
+.link-2,
+.link-3 {
+  width: 175px;
+}
+
+.item-1:hover,
+.item-2:hover,
+.item-3:hover {
+  background-color: #eee;
+}
+
+.item-1:hover > a,
+.item-2:hover > a,
+.item-3:hover > a {
+  color: tomato;
+}
+
+.item-1:hover > .icon-right-caret,
+.item-2:hover > .icon-right-caret {
+  display: block;
+}
+
+.item-1 {
+  text-transform: capitalize;
+}
+
+.item-1:hover .menu-2,
+.item-2:hover .menu-3 {
+  display: block;
+  top: 0;
+  right: -100%;
+}
