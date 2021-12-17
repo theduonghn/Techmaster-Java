@@ -21,3 +21,7 @@ https://theduonghn.github.io/Techmaster-Java/01.Web-can-ban/Buoi06/homework/leos
 
 ### Bài 8
 https://theduonghn.github.io/Techmaster-Java/01.Web-can-ban/Buoi08/homework/lazada_menu
+
+## Bài tập Java Core
+### Bài 1
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi01/Homework
