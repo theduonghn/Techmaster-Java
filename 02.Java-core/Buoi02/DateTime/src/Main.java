@@ -140,7 +140,11 @@ public class Main {
         // canhGocVuong2);
         // System.out.println(canhHuyen);
 
-        System.out.println(div(9, 2));
+        // System.out.println(div(9, 2));
+
+        int a = 3;
+        double b = (double) a;
+        System.out.println(b);
     }
 
     public static double div(int a, int b) {
