@@ -12,7 +12,7 @@ public class Main {
     public static final double PI = 3.14;
 
     public static void main(String[] args) throws Exception {
-        LocalDate today = LocalDate.now();
+        // LocalDate today = LocalDate.now();
         // System.out.println(today);
         // System.out.println(today.getDayOfMonth());
         // System.out.println(today.getDayOfWeek());
@@ -103,8 +103,8 @@ public class Main {
         // System.out.println(i);
 
         // Scanner sc = new Scanner(system.in);
-        Scanner sc = new Scanner(System.in);
-        Random rd = new Random();
+        // Scanner sc = new Scanner(System.in);
+        // Random rd = new Random();
         // System.out.println("Nhap so: ");
         // int number = sc.nextInt();
 
@@ -123,24 +123,33 @@ public class Main {
         // nhau", randomNum, num)
         // : System.out.printf("2 so %d và %d khong bang nhau", randomNum, num);
 
-        double canhGocVuong1 = 3.0;
-        double canhGocVuong2 = 4.0;
+        // double canhGocVuong1 = 3.0;
+        // double canhGocVuong2 = 4.0;
 
-        System.out.println(Math.pow(2, canhGocVuong1));
-        System.out.println(Math.pow(2, canhGocVuong2));
-        double canhHuyen = Math.sqrt(Math.pow(2, canhGocVuong1) + Math.pow(2,
-                canhGocVuong2));
-        System.out.println(canhHuyen);
-        System.out.println(Math.pow(canhGocVuong1, 2));
-        System.out.println(Math.pow(canhGocVuong2, 2));
-        canhHuyen = Math.sqrt(Math.pow(canhGocVuong1, 2) + Math.pow(
-                canhGocVuong2, 2));
-        System.out.println(canhHuyen);
-        canhHuyen = Math.sqrt(canhGocVuong1 * canhGocVuong1 + canhGocVuong2 * canhGocVuong2);
-        System.out.println(canhHuyen);
+        // System.out.println(Math.pow(2, canhGocVuong1));
+        // System.out.println(Math.pow(2, canhGocVuong2));
+        // double canhHuyen = Math.sqrt(Math.pow(2, canhGocVuong1) + Math.pow(2,
+        // canhGocVuong2));
+        // System.out.println(canhHuyen);
+        // System.out.println(Math.pow(canhGocVuong1, 2));
+        // System.out.println(Math.pow(canhGocVuong2, 2));
+        // canhHuyen = Math.sqrt(Math.pow(canhGocVuong1, 2) + Math.pow(
+        // canhGocVuong2, 2));
+        // System.out.println(canhHuyen);
+        // canhHuyen = Math.sqrt(canhGocVuong1 * canhGocVuong1 + canhGocVuong2 *
+        // canhGocVuong2);
+        // System.out.println(canhHuyen);
+
+        System.out.println(div(9, 2));
     }
 
     public static double div(int a, int b) {
-        return (double) a / b;
+        // double result = a / b;
+        // return result;
+
+        // return (double) a / b;
+
+        double c = a;
+        return c / b;
     }
 }
