@@ -25,3 +25,6 @@ https://theduonghn.github.io/Techmaster-Java/01.Web-can-ban/Buoi08/homework/laza
 ## Bài tập Java Core
 ### Bài 1
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi01/Homework
+
+### Bài 2
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi02/Homework
