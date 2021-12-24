@@ -31,3 +31,6 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi02/Home
 
 ### Bài 3
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi03/Homework
+
+### Bài 4
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi04/Homework
