@@ -22,16 +22,17 @@ public class Question5 {
     }
 
     public static void checkInputtedStringIsPalindrome() {
-        // Reverse inputted string, check if 2 string is equal
-
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap vao mot chuoi: ");
         String string = sc.nextLine();
-        String reversedString = "";
-        for (int i = string.length() - 1; i >= 0; --i) {
-            reversedString += string.charAt(i);
+        boolean isPalindrome = true;
+        for (int i = 0; i < string.length(); ++i) {
+            if (string.charAt(i) != string.charAt(string.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
         }
-        if (string.equals(reversedString)) {
+        if (isPalindrome) {
             System.out.println("Chuoi da nhap la chuoi palindrome");
         } else {
             System.out.println("Chuoi da nhap khong la chuoi palindrome");
