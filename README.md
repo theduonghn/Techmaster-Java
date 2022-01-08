@@ -43,3 +43,6 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi06/Home
 
 ### Bài 8
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi08/Homework
+
+### Bài 9
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi09/products-management
