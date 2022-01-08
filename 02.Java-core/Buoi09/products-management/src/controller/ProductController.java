@@ -81,16 +81,22 @@ public class ProductController {
     }
 
     private static void showProductsByCategory() {
-        // TODO: handle error when categoryChoice is not valid
-        System.out.println("Chon loai mat hang: ");
-        for (int i = 0; i < Category.values().length; i++) {
-            System.out.print(i + ". " + Category.values()[i] + "\t");
+        while (true) {
+            System.out.println("Chon loai mat hang: ");
+            for (int i = 0; i < Category.values().length; i++) {
+                System.out.print(i + ". " + Category.values()[i] + "\t");
+            }
+            System.out.println();
+            System.out.print("Nhap lua chon cua ban: ");
+            int categoryChoice = Integer.parseInt(sc.nextLine());
+            if (categoryChoice >= 0 && categoryChoice < Category.values().length) {
+                Category category = Category.values()[categoryChoice];
+                service.showProductsByCategory(products, category);
+                break;
+            } else {
+                System.out.println("Khong co lua chon nay");
+            }
         }
-        System.out.println();
-        System.out.print("Nhap lua chon cua ban: ");
-        int categoryChoice = Integer.parseInt(sc.nextLine());
-        Category category = Category.values()[categoryChoice];
-        service.showProductsByCategory(products, category);
     }
 
     private static void addProduct() {
