@@ -1,3 +1,6 @@
+package service;
+
+import model.Movie;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -7,7 +10,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Locale;
 
 public class MovieService {
     public ArrayList<Movie> getAllMovies(String filePath) {

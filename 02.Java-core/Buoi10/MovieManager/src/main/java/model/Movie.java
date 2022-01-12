@@ -1,3 +1,5 @@
+package model;
+
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

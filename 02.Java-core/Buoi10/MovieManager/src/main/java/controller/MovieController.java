@@ -1,3 +1,8 @@
+package controller;
+
+import model.Movie;
+import service.MovieService;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,7 +19,7 @@ public class MovieController {
         String searchCategory;
         System.out.print("Nhập thể loại cần tìm: ");
         searchCategory = sc.nextLine();
-        System.out.println("Danh sách phim có thể loại \"" + searchCategory + "\": ");
+        System.out.println("Danh sách phim thuộc thể loại \"" + searchCategory + "\": ");
         service.searchMoviesByCategory(movies, searchCategory);
     }
 
@@ -55,7 +60,7 @@ public class MovieController {
         System.out.println("2. Sắp xếp phim theo năm xuất bản");
         System.out.println("3. Sắp xếp phim theo tên");
         System.out.println("4. Tìm phim theo tên");
-        System.out.println("5. 3 phim có lượt xem cao nhất");
+        System.out.println("5. Top 3 phim có lượt xem cao nhất");
         System.out.println("6. Tìm phim theo thể loại");
         System.out.println("0. Thoát chương trình");
         System.out.print("Nhập lựa chọn của bạn: ");
