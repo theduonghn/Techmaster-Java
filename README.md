@@ -46,3 +46,6 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi08/Home
 
 ### Bài 9
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi09/products-management
+
+### Bài 10
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi09/MovieManager
