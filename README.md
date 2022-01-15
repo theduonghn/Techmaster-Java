@@ -49,3 +49,6 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi09/prod
 
 ### Bài 10
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi10/MovieManager
+
+### Bài 11
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi11/Homework
