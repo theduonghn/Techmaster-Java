@@ -52,3 +52,6 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi10/Movi
 
 ### Bài 11
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi11/Homework
+
+### Bài 12
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi12/Homework
