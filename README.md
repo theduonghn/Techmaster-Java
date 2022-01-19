@@ -55,3 +55,6 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi11/Home
 
 ### Bài 12
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi12/Homework
+
+### Bài 13
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi13/LibraryManager
