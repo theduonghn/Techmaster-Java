@@ -14,6 +14,8 @@ import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CustomerService {
@@ -221,5 +223,17 @@ public class CustomerService {
 
     public void deleteCustomer(ArrayList<Customer> customers, Customer customer) {
         customers.remove(customer);
+    }
+
+    public Map<Gender, Integer> countCusomersByGender(ArrayList<Customer> customers) {
+        Map<Gender, Integer> count = new HashMap<>();
+        for (Customer customer : customers) {
+            if (count.get(customer.getGender()) == null) {
+                count.put(customer.getGender(), 1);
+            } else {
+                count.put(customer.getGender(), count.get(customer.getGender()) + 1);
+            }
+        }
+        return  count;
     }
 }

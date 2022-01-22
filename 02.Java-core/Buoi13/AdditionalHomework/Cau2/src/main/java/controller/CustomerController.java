@@ -5,6 +5,7 @@ import model.Gender;
 import service.CustomerService;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CustomerController {
@@ -22,10 +23,11 @@ public class CustomerController {
             try {
                 System.out.println("--------------------");
                 System.out.println("1. Xem thông tin toàn bộ khách hàng");
-                System.out.println("2. Xem thông tin khách hàng nữ");
-                System.out.println("3. Xem thông tin khách hàng nam");
-                System.out.println("4. Thêm thông tin khách hàng");
-                System.out.println("5. Tìm kiếm thông tin khách hàng");
+                System.out.println("2. Đếm số lượng khách hàng theo giới tính");
+                System.out.println("3. Xem thông tin khách hàng nữ");
+                System.out.println("4. Xem thông tin khách hàng nam");
+                System.out.println("5. Thêm thông tin khách hàng");
+                System.out.println("6. Tìm kiếm thông tin khách hàng");
                 System.out.println("0. Thoát chương trình");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
@@ -35,18 +37,24 @@ public class CustomerController {
                         service.showCustomers(customers);
                         break;
                     case 2:
-                        service.showCustomers(service.getCustomersByGender(customers, Gender.FEMALE));
+                        Map<Gender, Integer> count = service.countCusomersByGender(customers);
+                        for (Map.Entry<Gender, Integer> entry : count.entrySet()) {
+                            System.out.println("Số khách hàng " + entry.getKey() + ": " + entry.getValue());
+                        }
                         break;
                     case 3:
-                        service.showCustomers(service.getCustomersByGender(customers, Gender.MALE));
+                        service.showCustomers(service.getCustomersByGender(customers, Gender.FEMALE));
                         break;
                     case 4:
+                        service.showCustomers(service.getCustomersByGender(customers, Gender.MALE));
+                        break;
+                    case 5:
                         System.out.println("Nhập thông tin khách hàng: ");
                         Customer newCustomer = service.addCustomer(customers);
                         System.out.println("Thông tin khách hàng vừa thêm: ");
                         service.showCustomer(newCustomer);
                         break;
-                    case 5:
+                    case 6:
                         System.out.print("Nhập mã khách hàng: ");
                         String id = sc.nextLine();
                         Customer customer = service.getCustomerById(customers, id);
@@ -88,6 +96,7 @@ public class CustomerController {
                     case 2:
                         service.deleteCustomer(customers, customer);
                         continueLoop = false;
+                        System.out.println("Đã xoá thông tin khách hàng");
                         break;
                     case 0:
                         continueLoop = false;
