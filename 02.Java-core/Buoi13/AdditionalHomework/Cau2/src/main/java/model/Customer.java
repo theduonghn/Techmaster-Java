@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @ToString
 @Getter
@@ -16,6 +18,9 @@ public class Customer {
 
     @SerializedName("fullName")
     private String fullName;
+
+    @SerializedName("dateOfBirth")
+    private LocalDate dateOfBirth;
 
     @SerializedName("gender")
     private Gender gender;
