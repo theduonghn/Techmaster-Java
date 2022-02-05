@@ -82,4 +82,8 @@ public class UserService {
         User user = new User(email, password, UserRole.USER);
         users.add(user);
     }
+
+    public void updatePassword(User user, String password) {
+        user.setPassword(password);
+    }
 }

@@ -33,7 +33,7 @@ public class Controller {
                 System.out.println("0. Thoát chương trình");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 switch (choice) {
                     case 1:
                         login();
@@ -89,18 +89,23 @@ public class Controller {
         while (continueLoop) {
             try {
                 System.out.println("----------MENU----------");
+                System.out.println("Chào mừng " + user.getEmail());
                 System.out.println("1. Tìm phim");
                 System.out.println("2. Thêm phim mới");
+                System.out.println("3. Đổi mật khẩu");
                 System.out.println("0. Đăng xuất");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 switch (choice) {
                     case 1:
                         menuSearchMovie(user);
                         break;
                     case 2:
                         addMovie();
+                        break;
+                    case 3:
+                        changePassword(user);
                         break;
                     case 0:
                         continueLoop = false;
@@ -115,9 +120,75 @@ public class Controller {
         }
     }
 
-    // TODO
-    public void menuUser(User user) {
+    private void changePassword(User user) {
+        System.out.print("Nhập mật khẩu mới: ");
+        String password = Util.sc.nextLine();
+        userService.updatePassword(user, password);
+    }
 
+    public void menuUser(User user) {
+        boolean continueLoop = true;
+        while (continueLoop) {
+            try {
+                System.out.println("----------MENU----------");
+                System.out.println("Chào mừng " + user.getEmail());
+                System.out.println("1. Tìm phim");
+                System.out.println("2. Danh sách phim");
+                System.out.println("3. Đổi mật khẩu");
+                System.out.println("0. Đăng xuất");
+                System.out.print("Nhập lựa chọn của bạn: ");
+
+                int choice = Util.inputInt();
+                switch (choice) {
+                    case 1:
+                        menuSearchMovie(user);
+                        break;
+                    case 2:
+                        menuMovieList(user);
+                        break;
+                    case 3:
+                        changePassword(user);
+                        break;
+                    case 0:
+                        continueLoop = false;
+                        break;
+                    default:
+                        System.out.println("Không có lựa chọn này");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Lựa chọn không hợp lệ");
+            }
+        }
+    }
+
+    public void menuMovieList(User user) {
+        boolean continueLoop = true;
+        while (continueLoop) {
+            try {
+                System.out.println("----------QUẢN LÝ DANH SÁCH PHIM----------");
+                System.out.println("1. Xem các danh sách");
+                System.out.println("2. Tạo danh sách mới");
+                System.out.println("0. Thoát");
+                System.out.print("Nhập lựa chọn của bạn: ");
+
+                int choice = Util.inputInt();
+                switch (choice) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 0:
+                        continueLoop = false;
+                        break;
+                    default:
+                        System.out.println("Không có lựa chọn này");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Lựa chọn không hợp lệ");
+            }
+        }
     }
 
     public void menuSearchMovie(User user) {
@@ -132,7 +203,7 @@ public class Controller {
                 System.out.println("0. Trở về");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 switch (choice) {
                     case 1:
                         findAllMovies(user);
@@ -159,9 +230,8 @@ public class Controller {
         }
     }
 
-    // TODO
     public void addMovie() {
-
+        movieService.inputMovie(movies);
     }
 
     public void findAllMovies(User user) {
@@ -185,7 +255,7 @@ public class Controller {
 
     public void searchMoviesByYear(User user) {
         System.out.print("Nhập năm phát hành: ");
-        int year = Integer.parseInt(Util.sc.nextLine());
+        int year = Util.inputInt();
         List<Movie> result = movieService.getMoviesByYear(movies, year);
         Util.showAllWithRowNumber(result);
         Movie selectedMovie = selectMovie(result);
@@ -212,7 +282,7 @@ public class Controller {
                 System.out.println("0. Trở về");
                 System.out.print("Chọn phim: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 if (choice == 0) {
                     continueLoop = false;
                 } else {
@@ -245,7 +315,7 @@ public class Controller {
                 System.out.println("0. Trở về");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 switch (choice) {
                     case 1:
                         menuUpdateMovie(movie);
@@ -286,7 +356,7 @@ public class Controller {
                 System.out.println("0. Trở về");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 switch (choice) {
                     case 1:
                         updateMovieTitle(movie);
@@ -301,7 +371,7 @@ public class Controller {
                         addCategory(movie);
                         break;
                     case 5:
-                        deleteCategory(movie);
+                        removeCategory(movie);
                         break;
                     case 0:
                         continueLoop = false;
@@ -316,7 +386,7 @@ public class Controller {
         }
     }
 
-    private void deleteCategory(Movie movie) {
+    private void removeCategory(Movie movie) {
         boolean continueLoop = true;
         while (continueLoop) {
             try {
@@ -324,7 +394,7 @@ public class Controller {
                 System.out.println("0. Trở về");
                 System.out.print("Chọn thể loại muốn xoá: ");
 
-                int choice = Integer.parseInt(Util.sc.nextLine());
+                int choice = Util.inputInt();
                 if (choice == 0) {
                     continueLoop = false;
                 } else {
@@ -345,14 +415,14 @@ public class Controller {
 
     private void updateMovieLength(Movie movie) {
         System.out.print("Nhập độ dài mới: ");
-        int length = Integer.parseInt(Util.sc.nextLine());
+        int length = Util.inputInt();
         movieService.updateMovieLength(movie, length);
         System.out.println("Cập nhật thông tin phim thành công");
     }
 
     private void updateMovieYear(Movie movie) {
         System.out.print("Nhập năm phát hành mới: ");
-        int year = Integer.parseInt(Util.sc.nextLine());
+        int year = Util.inputInt();
         movieService.updateMovieYear(movie, year);
         System.out.println("Cập nhật thông tin phim thành công");
     }

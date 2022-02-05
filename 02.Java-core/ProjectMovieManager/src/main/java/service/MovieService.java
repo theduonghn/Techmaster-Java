@@ -1,8 +1,10 @@
 package service;
 
 import model.Movie;
+import util.Util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -63,6 +65,28 @@ public class MovieService {
         movies.add(m10);
 
         return movies;
+    }
+
+    public void inputMovie(List<Movie> movies) {
+        System.out.print("Nhập tên phim: ");
+        String title = Util.sc.nextLine();
+        System.out.print("Nhập năm phát hành: ");
+        int year = Util.inputInt();
+        System.out.print("Nhập độ dài: ");
+        int length = Util.inputInt();
+        System.out.print("Thêm các thể loại (cách nhau bởi dấu phẩy): ");
+        String[] categoriesArray = Util.sc.nextLine().split("\s*,\s*");
+        List<String> categories = new ArrayList<>();
+        for (String category : categoriesArray) {
+            // Remove empty string if it is in list
+            if (!category.equals("")) {
+                categories.add(category);
+            }
+        }
+        Movie movie = new Movie(title, year, length, categories);
+        movies.add(movie);
+        System.out.println("Thêm phim thành công");
+        System.out.println(movie);
     }
 
     public Movie getMovieById(List<Movie> movies, UUID id) {

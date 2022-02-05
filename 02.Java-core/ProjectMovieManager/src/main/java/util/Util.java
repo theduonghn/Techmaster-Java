@@ -7,6 +7,10 @@ import java.util.UUID;
 public class Util {
     public static Scanner sc = new Scanner(System.in);
 
+    public static int inputInt() {
+        return Integer.parseInt(sc.nextLine());
+    }
+
     public static UUID generateId() {
         return java.util.UUID.randomUUID();
     }
