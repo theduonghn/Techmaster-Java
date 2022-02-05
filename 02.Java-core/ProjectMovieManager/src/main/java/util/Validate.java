@@ -1,7 +1,6 @@
 package util;
 
 import model.User;
-import service.UserService;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -17,5 +16,13 @@ public class Validate {
 
     public static boolean validateEmailAvailable(List<User> users, String email) {
         return !UserUtil.emailExists(users, email);
+    }
+
+    public static boolean validateRatingPoint(int point) {
+        if (0 <= point && point <= 10) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

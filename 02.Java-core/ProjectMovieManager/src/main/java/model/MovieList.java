@@ -1,23 +1,18 @@
 package model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Getter
 @Setter
 public class MovieList {
-    UUID userId;
     String name;
     List<Movie> movies;
 
-    public MovieList(UUID userId, String name) {
-        this.userId = userId;
+    public MovieList(String name) {
         this.name = name;
         this.movies = new ArrayList<>();
     }

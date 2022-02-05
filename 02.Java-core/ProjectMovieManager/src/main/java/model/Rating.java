@@ -14,5 +14,5 @@ import java.util.UUID;
 public class Rating {
     private UUID userId;
     private UUID movieId;
-    private int rating;
+    private int point;
 }

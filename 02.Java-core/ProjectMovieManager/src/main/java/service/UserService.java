@@ -1,5 +1,6 @@
 package service;
 
+import model.MovieList;
 import model.User;
 import model.UserRole;
 import util.UserUtil;
@@ -85,5 +86,13 @@ public class UserService {
 
     public void updatePassword(User user, String password) {
         user.setPassword(password);
+    }
+
+    public void addMovieList(User user, MovieList movieList) {
+        user.addMovieList(movieList);
+    }
+
+    public void removeMovieList(User user, MovieList movieList) {
+        user.removeMovieList(movieList);
     }
 }

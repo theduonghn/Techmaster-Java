@@ -1,6 +1,7 @@
 package controller;
 
 import model.*;
+import service.MovieListService;
 import service.MovieService;
 import service.UserService;
 import util.Util;
@@ -10,11 +11,11 @@ import java.util.List;
 public class Controller {
     List<User> users;
     List<Movie> movies;
-    List<MovieList> movieLists;
     List<Rating> ratings;
 
     UserService userService = new UserService();
     MovieService movieService = new MovieService();
+    MovieListService movieListService = new MovieListService();
 
     boolean continueProgram = true;
 
@@ -133,8 +134,9 @@ public class Controller {
                 System.out.println("----------MENU----------");
                 System.out.println("Chào mừng " + user.getEmail());
                 System.out.println("1. Tìm phim");
-                System.out.println("2. Danh sách phim");
-                System.out.println("3. Đổi mật khẩu");
+                System.out.println("2. Xem danh sách phim");
+                System.out.println("3. Tạo danh sách phim");
+                System.out.println("4. Đổi mật khẩu");
                 System.out.println("0. Đăng xuất");
                 System.out.print("Nhập lựa chọn của bạn: ");
 
@@ -143,40 +145,19 @@ public class Controller {
                     case 1:
                         menuSearchMovie(user);
                         break;
+                    // TODO
                     case 2:
-                        menuMovieList(user);
+                        if (user.getMovieLists().size() == 0) {
+                            System.out.println("Bạn chưa có danh sách phim nào");
+                        } else {
+                            Util.showAllWithRowNumber(user.getMovieLists());
+                        }
                         break;
                     case 3:
+                        movieListService.inputMovieList(user);
+                        break;
+                    case 4:
                         changePassword(user);
-                        break;
-                    case 0:
-                        continueLoop = false;
-                        break;
-                    default:
-                        System.out.println("Không có lựa chọn này");
-                        break;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Lựa chọn không hợp lệ");
-            }
-        }
-    }
-
-    public void menuMovieList(User user) {
-        boolean continueLoop = true;
-        while (continueLoop) {
-            try {
-                System.out.println("----------QUẢN LÝ DANH SÁCH PHIM----------");
-                System.out.println("1. Xem các danh sách");
-                System.out.println("2. Tạo danh sách mới");
-                System.out.println("0. Thoát");
-                System.out.print("Nhập lựa chọn của bạn: ");
-
-                int choice = Util.inputInt();
-                switch (choice) {
-                    case 1:
-                        break;
-                    case 2:
                         break;
                     case 0:
                         continueLoop = false;
@@ -234,6 +215,8 @@ public class Controller {
         movieService.inputMovie(movies);
     }
 
+    // TODO: display rating if role is user
+    // TODO: display movieList if role is user
     public void findAllMovies(User user) {
         Util.showAllWithRowNumber(movies);
         Movie selectedMovie = selectMovie(movies);
@@ -242,6 +225,8 @@ public class Controller {
         }
     }
 
+    // TODO: display rating if role is user
+    // TODO: display movieList if role is user
     public void searchMoviesByTitle(User user) {
         System.out.print("Nhập từ khoá tên phim: ");
         String title = Util.sc.nextLine();
@@ -253,6 +238,8 @@ public class Controller {
         }
     }
 
+    // TODO: display rating if role is user
+    // TODO: display movieList if role is user
     public void searchMoviesByYear(User user) {
         System.out.print("Nhập năm phát hành: ");
         int year = Util.inputInt();
@@ -264,6 +251,8 @@ public class Controller {
         }
     }
 
+    // TODO: display rating if role is user
+    // TODO: display movieList if role is user
     public void searchMoviesByCategory(User user) {
         System.out.print("Nhập thể loại: ");
         String category = Util.sc.nextLine();
@@ -300,7 +289,7 @@ public class Controller {
         if (user.getRole().equals(UserRole.ADMIN)) {
             menuSelectMovieAdmin(movie);
         } else if (user.getRole().equals(UserRole.USER)) {
-            menuSelectMovieUser(movie);
+            menuSelectMovieUser(user, movie);
         }
     }
 
@@ -434,8 +423,94 @@ public class Controller {
         System.out.println("Cập nhật thông tin phim thành công");
     }
 
-    // TODO
-    private void menuSelectMovieUser(Movie movie) {
+    private void menuSelectMovieUser(User user, Movie movie) {
+        boolean continueLoop = true;
+        while (continueLoop) {
+            try {
+                System.out.println("----------TUỲ CHỌN PHIM----------");
+                System.out.println("Phim đang chọn: " + movie.getTitle());
+                System.out.println("1. Đánh giá phim");
+                System.out.println("2. Thêm vào danh sách");
+                System.out.println("3. Xoá khỏi danh sách");
+                System.out.println("0. Trở về");
+                System.out.print("Nhập lựa chọn của bạn: ");
 
+                int choice = Util.inputInt();
+                switch (choice) {
+                    case 1:
+                        rateMovie(user, movie);
+                        break;
+                    case 2:
+                        menuAddMovieToMovieList(user, movie);
+                        break;
+                    case 3:
+                        menuRemoveMovieFromMovieList(user, movie);
+                        break;
+                    case 0:
+                        continueLoop = false;
+                        break;
+                    default:
+                        System.out.println("Không có lựa chọn này");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Lựa chọn không hợp lệ");
+            }
+        }
+    }
+
+    private void menuAddMovieToMovieList(User user, Movie movie) {
+        boolean continueLoop = true;
+        while (continueLoop) {
+            try {
+                System.out.println("----------THÊM PHIM VÀO DANH SÁCH----------");
+                System.out.println("Phim đang chọn: " + movie.getTitle());
+                movieListService.showMovieLists(user.getMovieLists(), movie);
+                System.out.println("0. Trở về");
+                System.out.print("Chọn danh sách: ");
+
+                int choice = Util.inputInt();
+                if (choice == 0) {
+                    continueLoop = false;
+                } else {
+                    MovieList movieList = Util.selectItemByRowNumber(user.getMovieLists(), choice);
+                    movieListService.addMovieToMovieList(movieList, movie);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Lựa chọn không hợp lệ");
+            }
+        }
+    }
+
+    private void menuRemoveMovieFromMovieList(User user, Movie movie) {
+        boolean continueLoop = true;
+        while (continueLoop) {
+            try {
+                System.out.println("----------XOÁ PHIM KHỎI DANH SÁCH----------");
+                System.out.println("Phim đang chọn: " + movie.getTitle());
+                List<MovieList> movieListContainsMovie =
+                        movieListService.getMovieListsByMovieId(user.getMovieLists(), movie.getId());
+                movieListService.showMovieLists(movieListContainsMovie, movie);
+                System.out.println("0. Trở về");
+                System.out.print("Chọn danh sách: ");
+
+                int choice = Util.inputInt();
+                if (choice == 0) {
+                    continueLoop = false;
+                } else {
+                    MovieList movieList = Util.selectItemByRowNumber(movieListContainsMovie, choice);
+                    movieListService.removeMovieFromMovieList(movieList, movie);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Lựa chọn không hợp lệ");
+            }
+        }
+    }
+
+    private void rateMovie(User user, Movie movie) {
+        System.out.print("Nhập điểm đánh giá: ");
+        int point = Util.inputInt();
+        Rating rating = new Rating(user.getId(), movie.getId(), point);
+        ratings.add(rating);
     }
 }
