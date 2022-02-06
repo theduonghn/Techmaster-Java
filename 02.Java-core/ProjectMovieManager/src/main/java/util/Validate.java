@@ -1,6 +1,5 @@
 package util;
 
-import model.Movie;
 import model.MovieList;
 import model.User;
 
@@ -21,18 +20,21 @@ public class Validate {
     }
 
     public static boolean validateRatingPoint(int point) {
-        if (1 <= point && point <= 10) {
-            return true;
-        } else {
-            return false;
-        }
+        return 1 <= point && point <= 10;
     }
 
     public static boolean validateMovieListNameAvailable(List<MovieList> movieLists, MovieList movieList, String name) {
         for (MovieList m : movieLists) {
-            if (m.equals(movieList)) {
-                continue;
-            } else if (m.getName().equalsIgnoreCase(name)) {
+            if (!m.equals(movieList) && m.getName().equalsIgnoreCase(name)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean validateMovieListNameAvailable(List<MovieList> movieLists, String name) {
+        for (MovieList m : movieLists) {
+            if (m.getName().equalsIgnoreCase(name)) {
                 return false;
             }
         }

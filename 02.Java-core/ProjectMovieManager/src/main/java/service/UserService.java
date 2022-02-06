@@ -3,7 +3,6 @@ package service;
 import model.MovieList;
 import model.User;
 import model.UserRole;
-import util.UserUtil;
 import util.Util;
 import util.Validate;
 
@@ -90,9 +89,5 @@ public class UserService {
 
     public void addMovieList(User user, MovieList movieList) {
         user.addMovieList(movieList);
-    }
-
-    public void removeMovieList(User user, MovieList movieList) {
-        user.removeMovieList(movieList);
     }
 }

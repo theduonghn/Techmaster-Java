@@ -14,11 +14,18 @@ public class MovieListService {
     UserService userService = new UserService();
 
     public void inputMovieList(User user) {
-        System.out.print("Nhập tên danh sách: ");
-        String name = Util.sc.nextLine();
-        MovieList movieList = new MovieList(name);
-        userService.addMovieList(user, movieList);
-        System.out.println("Tạo danh sách thành công");
+        while (true) {
+            System.out.print("Nhập tên danh sách: ");
+            String name = Util.sc.nextLine();
+            if (Validate.validateMovieListNameAvailable(user.getMovieLists(), name)) {
+                MovieList movieList = new MovieList(name);
+                userService.addMovieList(user, movieList);
+                System.out.println("Tạo danh sách thành công");
+                break;
+            } else {
+                System.out.println("Tên đã được sử dụng");
+            }
+        }
     }
 
     public boolean isMovieInMovieList(MovieList movieList, Movie movie) {
@@ -35,14 +42,12 @@ public class MovieListService {
     }
 
     public void showMovieLists(List<MovieList> movieLists, Movie movie) {
-        if (!isMovieInAnyMovieList(movieLists, movie)) {
-            System.out.println("Phim này chưa có trong danh sách nào");
-            return;
-        }
-
         if (movieLists.size() == 0) {
             System.out.println("Bạn chưa có danh sách phim nào");
-            return;
+        }
+
+        if (!isMovieInAnyMovieList(movieLists, movie)) {
+            System.out.println("Phim này chưa có trong danh sách nào");
         }
 
 
@@ -54,6 +59,17 @@ public class MovieListService {
                 System.out.println();
             }
         }
+    }
+
+    public void showMovieListsInOneRow(List<MovieList> movieLists) {
+        System.out.print("Danh sách phim: [");
+        for (int i = 0; i < movieLists.size(); i++) {
+            if (i != 0) {
+                System.out.print(", ");
+            }
+            System.out.print(movieLists.get(i).getName());
+        }
+        System.out.println("]");
     }
 
     public void addMovieToMovieList(MovieList movieList, Movie movie) {
@@ -88,12 +104,16 @@ public class MovieListService {
         return result;
     }
 
+    public List<MovieList> getMovieListsByMovie(List<MovieList> movieLists, Movie movie) {
+        return getMovieListsByMovieId(movieLists, movie.getId());
+    }
+
     public void updateMovieListName(MovieList movieList, String name) {
         movieList.setName(name);
         System.out.println("Cập nhật tên thành công");
     }
 
-    public void deleteMovieList(List<MovieList> movieLists, MovieList movieList) {
+    public void removeMovieList(List<MovieList> movieLists, MovieList movieList) {
         if (movieLists.remove(movieList)) {
             System.out.println("Xoá danh sách thành công");
         } else {

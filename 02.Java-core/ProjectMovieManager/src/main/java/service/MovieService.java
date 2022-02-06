@@ -1,14 +1,19 @@
 package service;
 
 import model.Movie;
+import model.MovieList;
+import model.Rating;
+import model.User;
 import util.Util;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 public class MovieService {
+    MovieListService movieListService = new MovieListService();
+    RatingService ratingService = new RatingService();
+
     public List<Movie> initMovies() {
         List<Movie> movies = new ArrayList<>();
         Movie m1 = new Movie("The Shawshank Redemption", 1994, 142, new ArrayList<>());
@@ -153,5 +158,31 @@ public class MovieService {
 
     public void removeCategory(Movie movie, String category) {
         movie.removeCategory(category);
+    }
+
+    public void showMoviesWithRatings(List<Movie> movies, User user, List<Rating> ratings) {
+        for (int i = 0; i < movies.size(); i++) {
+            System.out.println(i + 1 + ". " + movies.get(i));
+            Rating rating = ratingService.getRatingByMovieAndUser(ratings, movies.get(i), user);
+            if (rating != null) {
+                System.out.println("Đánh giá của bạn: " + rating.getPoint());
+            } else {
+                System.out.println("Đánh giá của bạn: Chưa đánh giá");
+            }
+        }
+    }
+
+    public void showMoviesWithRatingsAndMovieLists(List<Movie> movies, User user, List<Rating> ratings) {
+        for (int i = 0; i < movies.size(); i++) {
+            System.out.println(i + 1 + ". " + movies.get(i));
+            Rating rating = ratingService.getRatingByMovieAndUser(ratings, movies.get(i), user);
+            if (rating != null) {
+                System.out.println("Đánh giá của bạn: " + rating.getPoint());
+            } else {
+                System.out.println("Đánh giá của bạn: Chưa đánh giá");
+            }
+            List<MovieList> movieLists = movieListService.getMovieListsByMovie(user.getMovieLists(), movies.get(i));
+            movieListService.showMovieListsInOneRow(movieLists);
+        }
     }
 }
