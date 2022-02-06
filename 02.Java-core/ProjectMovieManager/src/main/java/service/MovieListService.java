@@ -4,6 +4,7 @@ import model.Movie;
 import model.MovieList;
 import model.User;
 import util.Util;
+import util.Validate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,5 +86,31 @@ public class MovieListService {
             }
         }
         return result;
+    }
+
+    public void updateMovieListName(MovieList movieList, String name) {
+        movieList.setName(name);
+        System.out.println("Cập nhật tên thành công");
+    }
+
+    public void deleteMovieList(List<MovieList> movieLists, MovieList movieList) {
+        if (movieLists.remove(movieList)) {
+            System.out.println("Xoá danh sách thành công");
+        } else {
+            System.out.println("Danh sách không tồn tại");
+        }
+    }
+
+    public void changeMovieListName(List<MovieList> movieLists, MovieList movieList) {
+        while (true) {
+            System.out.print("Nhập tên mới: ");
+            String name = Util.sc.nextLine();
+            if (Validate.validateMovieListNameAvailable(movieLists, movieList, name)) {
+                updateMovieListName(movieList, name);
+                break;
+            } else {
+                System.out.println("Tên đã được sử dụng");
+            }
+        }
     }
 }

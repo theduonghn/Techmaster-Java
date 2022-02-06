@@ -1,5 +1,7 @@
 package util;
 
+import model.Movie;
+import model.MovieList;
 import model.User;
 
 import java.util.List;
@@ -19,10 +21,21 @@ public class Validate {
     }
 
     public static boolean validateRatingPoint(int point) {
-        if (0 <= point && point <= 10) {
+        if (1 <= point && point <= 10) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public static boolean validateMovieListNameAvailable(List<MovieList> movieLists, MovieList movieList, String name) {
+        for (MovieList m : movieLists) {
+            if (m.equals(movieList)) {
+                continue;
+            } else if (m.getName().equalsIgnoreCase(name)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
