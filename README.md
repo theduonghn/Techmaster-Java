@@ -80,3 +80,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi12/Home
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi13/LibraryManager
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi13/AdditionalHomework
+
+### Đồ án
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/ProjectMovieManager
