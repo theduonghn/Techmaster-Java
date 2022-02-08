@@ -172,7 +172,7 @@ public class MovieService {
         }
     }
 
-    public void showMoviesWithRatingsAndMovieLists(List<Movie> movies, User user, List<Rating> ratings) {
+    public void showMoviesWithRatingAndMovieLists(List<Movie> movies, User user, List<Rating> ratings) {
         for (int i = 0; i < movies.size(); i++) {
             System.out.println(i + 1 + ". " + movies.get(i));
             Rating rating = ratingService.getRatingByMovieAndUser(ratings, movies.get(i), user);
@@ -184,5 +184,17 @@ public class MovieService {
             List<MovieList> movieLists = movieListService.getMovieListsByMovie(user.getMovieLists(), movies.get(i));
             movieListService.showMovieListsInOneRow(movieLists);
         }
+    }
+
+    public void showMovieWithRatingAndMovieLists(Movie movie, User user, List<Rating> ratings) {
+        System.out.println(movie);
+        Rating rating = ratingService.getRatingByMovieAndUser(ratings, movie, user);
+        if (rating != null) {
+            System.out.println("Đánh giá của bạn: " + rating.getPoint());
+        } else {
+            System.out.println("Đánh giá của bạn: Chưa đánh giá");
+        }
+        List<MovieList> movieLists = movieListService.getMovieListsByMovie(user.getMovieLists(), movie);
+        movieListService.showMovieListsInOneRow(movieLists);
     }
 }

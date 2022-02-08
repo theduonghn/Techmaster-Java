@@ -3,6 +3,7 @@ package controller;
 import model.*;
 import service.MovieListService;
 import service.MovieService;
+import service.RatingService;
 import service.UserService;
 import util.Util;
 import util.Validate;
@@ -14,6 +15,7 @@ public class Controller {
     UserService userService = new UserService();
     MovieService movieService = new MovieService();
     MovieListService movieListService = new MovieListService();
+    RatingService ratingService = new RatingService();
 
     List<User> allUsers = userService.initUsers();
     List<Movie> allMovies = movieService.initMovies();
@@ -403,7 +405,7 @@ public class Controller {
                 if (user.getRole().equals(UserRole.ADMIN)) {
                     Util.showAllWithRowNumber(movies);
                 } else if (user.getRole().equals(UserRole.USER)) {
-                    movieService.showMoviesWithRatingsAndMovieLists(movies, user, allRatings);
+                    movieService.showMoviesWithRatingAndMovieLists(movies, user, allRatings);
                 }
                 System.out.println("0. Trở về");
                 System.out.print("Chọn phim: ");
@@ -545,7 +547,8 @@ public class Controller {
         while (continueLoop) {
             try {
                 System.out.println("----------TUỲ CHỌN PHIM----------");
-                System.out.println("Phim đang chọn: " + movie.getTitle());
+                System.out.print("Phim đang chọn: ");
+                movieService.showMovieWithRatingAndMovieLists(movie, user, allRatings);
                 System.out.println("1. Đánh giá phim");
                 System.out.println("2. Thêm vào danh sách");
                 System.out.println("3. Xoá khỏi danh sách");
@@ -618,12 +621,16 @@ public class Controller {
         while (true) {
             System.out.print("Nhập điểm đánh giá: ");
             int point = Util.inputInt();
-            if (Validate.validateRatingPoint(point)) {
+            if (!Validate.validateRatingPoint(point)) {
+                System.out.println("Điểm đánh giá phải từ 1 đến 10");
+            } else if (ratingService.getRatingByMovieAndUser(allRatings, movie, user) != null) {
+                Rating rating = ratingService.getRatingByMovieAndUser(allRatings, movie, user);
+                rating.setPoint(point);
+                break;
+            } else {
                 Rating rating = new Rating(user.getId(), movie.getId(), point);
                 allRatings.add(rating);
                 break;
-            } else {
-                System.out.println("Điểm đánh giá phải từ 1 đến 10");
             }
         }
     }
