@@ -6,16 +6,11 @@ import model.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RatingService {
     public List<Rating> getRatingsByUser(List<Rating> ratings, User user) {
-        List<Rating> results = new ArrayList<>();
-        for (Rating rating : ratings) {
-            if (rating.getUserId().equals(user.getId())) {
-                results.add(rating);
-            }
-        }
-        return results;
+        return ratings.stream().filter(rating -> rating.getUserId().equals(user.getId())).collect(Collectors.toList());
     }
 
     public Rating getRatingByMovieAndUser(List<Rating> ratings, Movie movie, User user) {

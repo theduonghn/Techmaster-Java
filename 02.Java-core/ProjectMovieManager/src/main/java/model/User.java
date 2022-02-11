@@ -30,8 +30,4 @@ public class User {
     public void addMovieList(MovieList movieList) {
         this.movieLists.add(movieList);
     }
-
-    public void removeMovieList(MovieList movieList) {
-        this.movieLists.remove(movieList);
-    }
 }

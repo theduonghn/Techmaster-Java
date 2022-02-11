@@ -67,10 +67,9 @@ public class Controller {
     }
 
     public void loginSuccess(User user) {
-        if (user.getRole().equals(UserRole.ADMIN)) {
-            menuAdmin(user);
-        } else if (user.getRole().equals(UserRole.USER)) {
-            menuUser(user);
+        switch (user.getRole()) {
+            case ADMIN -> menuAdmin(user);
+            case USER -> menuUser(user);
         }
     }
 
@@ -425,10 +424,9 @@ public class Controller {
     }
 
     public void selectMovieSuccess(User user, Movie movie) {
-        if (user.getRole().equals(UserRole.ADMIN)) {
-            menuSelectMovieAdmin(movie);
-        } else if (user.getRole().equals(UserRole.USER)) {
-            menuSelectMovieUser(user, movie);
+        switch (user.getRole()) {
+            case ADMIN -> menuSelectMovieAdmin(movie);
+            case USER -> menuSelectMovieUser(user, movie);
         }
     }
 

@@ -16,9 +16,7 @@ public class Util {
     }
 
     public static <E> void showAll(List<E> list) {
-        for (E item : list) {
-            System.out.println(item);
-        }
+        list.forEach(e -> System.out.println(e));
     }
 
     public static <E> void showAllWithRowNumber(List<E> list) {

@@ -33,12 +33,7 @@ public class MovieListService {
     }
 
     public boolean isMovieInAnyMovieList(List<MovieList> movieLists, Movie movie) {
-        for (MovieList movieList : movieLists) {
-            if (isMovieInMovieList(movieList, movie)) {
-                return true;
-            }
-        }
-        return false;
+        return movieLists.stream().anyMatch(movieList -> isMovieInMovieList(movieList, movie));
     }
 
     public void showMovieLists(List<MovieList> movieLists, Movie movie) {

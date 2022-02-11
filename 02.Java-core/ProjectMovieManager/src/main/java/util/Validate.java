@@ -33,11 +33,6 @@ public class Validate {
     }
 
     public static boolean validateMovieListNameAvailable(List<MovieList> movieLists, String name) {
-        for (MovieList m : movieLists) {
-            if (m.getName().equalsIgnoreCase(name)) {
-                return false;
-            }
-        }
-        return true;
+        return movieLists.stream().noneMatch(m -> m.getName().equalsIgnoreCase(name));
     }
 }

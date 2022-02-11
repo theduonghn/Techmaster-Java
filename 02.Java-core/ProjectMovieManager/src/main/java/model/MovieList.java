@@ -19,7 +19,7 @@ public class MovieList {
 
     @Override
     public String toString() {
-        return "MovieList(" + "name=" + name + ", " + movies.size() + " movies" + ')';
+        return name + " (" + movies.size() + " movies)";
     }
 
     public void addMovie(Movie movie) {

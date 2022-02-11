@@ -9,6 +9,7 @@ import util.Util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class MovieService {
     MovieListService movieListService = new MovieListService();
@@ -104,36 +105,19 @@ public class MovieService {
     }
 
     public List<Movie> getMoviesByTitle(List<Movie> movies, String title) {
-        List<Movie> result = new ArrayList<>();
-        for (Movie movie : movies) {
-            if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                result.add(movie);
-            }
-        }
-        return result;
+        return movies.stream().filter(movie -> movie.getTitle().toLowerCase().contains(title.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     public List<Movie> getMoviesByYear(List<Movie> movies, int year) {
-        List<Movie> result = new ArrayList<>();
-        for (Movie movie : movies) {
-            if (movie.getYear() == year) {
-                result.add(movie);
-            }
-        }
-        return result;
+        return movies.stream().filter(movie -> movie.getYear() == year).collect(Collectors.toList());
     }
 
     public List<Movie> getMoviesByCategory(List<Movie> movies, String category) {
-        List<Movie> result = new ArrayList<>();
-        for (Movie movie : movies) {
+        return movies.stream().filter(movie -> {
             List<String> categories = movie.getCategories();
-            for (String c : categories) {
-                if (c.equalsIgnoreCase(category)) {
-                    result.add(movie);
-                }
-            }
-        }
-        return result;
+            return categories.stream().anyMatch(c -> c.equalsIgnoreCase(category));
+        }).collect(Collectors.toList());
     }
 
     public void deleteMovie(List<Movie> movies, Movie movie) {

@@ -73,7 +73,6 @@ public class UserService {
             } else if (!Validate.validateEmailAvailable(users, email)) {
                 System.out.println("Email đã được sử dụng");
             } else {
-                System.out.println("Đăng kí thành công");
                 break;
             }
         }
@@ -81,6 +80,7 @@ public class UserService {
         String password = Util.sc.nextLine();
         User user = new User(email, password, UserRole.USER);
         users.add(user);
+        System.out.println("Đăng kí thành công");
     }
 
     public void updatePassword(User user, String password) {
