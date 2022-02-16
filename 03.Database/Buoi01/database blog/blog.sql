@@ -44,7 +44,7 @@ CREATE TABLE post_tag(
     tag_id INT,
     PRIMARY KEY(post_id, tag_id),
     FOREIGN KEY(post_id) REFERENCES post(id),
-    FOREIGN KEY(tag_id) REFERENCES tag(id),
+    FOREIGN KEY(tag_id) REFERENCES tag(id)
 )
 
 CREATE TABLE discuss(

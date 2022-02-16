@@ -84,3 +84,10 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi13/Addi
 ### Đồ án
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/ProjectMovieManager
+
+## Bài tập Database
+
+### Bài 1
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/database%20blog
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/database%20movie
