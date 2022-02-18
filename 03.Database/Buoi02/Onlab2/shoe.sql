@@ -98,8 +98,22 @@ CREATE TABLE users(
     FOREIGN KEY(id_gender) REFERENCES gender(id)
 )
 
-INSERT INTO author(id, name)
-VALUES (null, 'Ngoc')
+-- Insert into category
+INSERT INTO category(id, name)
+VALUES(1, 'Sport Inspired');
+INSERT INTO category(id, name)
+VALUES(2, 'Chạy');
+INSERT INTO category(id, name)
+VALUES(3, 'Sportswear');
+INSERT INTO category(id, name)
+VALUES(3, 'Sportswear');
+INSERT INTO category(id, name)
+VALUES(4, 'Originals');
 
-INSERT INTO author(name)
-VALUES ('Linh')
+-- Insert into brand
+
+-- Insert into gender
+
+-- Insert into item
+INSERT INTO item(name, description, image, )
+VALUES ()
