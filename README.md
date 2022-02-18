@@ -91,3 +91,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/ProjectMovi
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/database%20blog
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/database%20movie
+
+### Bài 2
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi02/database%20shoe
