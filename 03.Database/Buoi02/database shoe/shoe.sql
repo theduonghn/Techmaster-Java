@@ -358,7 +358,7 @@ VALUES (
     -- id_gender
     2,
     -- quantity
-    74
+    0
 );
 INSERT INTO price(id_item, price, date)
 VALUES (3, 786800, '2022-02-18');
@@ -387,31 +387,42 @@ VALUES (
     -- id
     4,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Kappa Giày đi học trẻ em 6-12 tuổi 304WMI0 XANH NAVY',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    'Sneakers Back To School trẻ em, giày đi học giá rẻ thời trang, cho bé trai và bé gái.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/0/304u310-a00-20.jpg',
     -- id_category
-    1,
+    2,
     -- id_brand
     1,
     -- status
     'Còn hàng',
     -- id_gender
-    1,
+    4,
     -- quantity
-    35
+    17
 );
 INSERT INTO price(id_item, price, date)
-VALUES (4, , '2022-02-18');
+VALUES (4, 443450, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(4, );
+VALUES(4, 8);
 INSERT INTO item_size(id_item, id_size)
-VALUES(4, );
+VALUES(4, 31);
+INSERT INTO item_size(id_item, id_size)
+VALUES(4, 32);
+INSERT INTO item_size(id_item, id_size)
+VALUES(4, 33);
+INSERT INTO item_size(id_item, id_size)
+VALUES(4, 34);
+INSERT INTO item_size(id_item, id_size)
+VALUES(4, 35);
 INSERT INTO item_color(id_item, id_color)
-VALUES(4, );
+VALUES(4, 7);
+INSERT INTO item_color(id_item, id_color)
+VALUES(4, 2);
+INSERT INTO item_color(id_item, id_color)
+VALUES(4, 6);
 
 -- Item 5
 INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
@@ -419,64 +430,85 @@ VALUES (
     -- id
     5,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Kappa Giày đi học trẻ em 6-12 tuổi 304WMI0 TRẮNG',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    'Sneakers Back To School trẻ em thời trang, cho bé trai và bé gái.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/0/304wmi0_001-6.jpg',
     -- id_category
-    1,
+    4,
     -- id_brand
     1,
     -- status
-    'Còn hàng',
+    'Hết hàng',
     -- id_gender
-    1,
+    4,
     -- quantity
-    35
+    0
 );
 INSERT INTO price(id_item, price, date)
-VALUES (5, , '2022-02-18');
+VALUES (5, 443450, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(5, );
+VALUES(5, 8);
 INSERT INTO item_size(id_item, id_size)
-VALUES(5, );
+VALUES(5, 31);
+INSERT INTO item_size(id_item, id_size)
+VALUES(5, 32);
+INSERT INTO item_size(id_item, id_size)
+VALUES(5, 33);
+INSERT INTO item_size(id_item, id_size)
+VALUES(5, 34);
+INSERT INTO item_size(id_item, id_size)
+VALUES(5, 35);
 INSERT INTO item_color(id_item, id_color)
-VALUES(5, );
+VALUES(5, 6);
+INSERT INTO item_color(id_item, id_color)
+VALUES(5, 2);
+INSERT INTO item_color(id_item, id_color)
+VALUES(5, 7);
 
 -- Item 6
-INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
 INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
 VALUES (
     -- id
     6,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Superga giày lười nữ 221SSWS_S00GJB0 F83',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    'Thiết kế: Với thiết kế thanh lịch, form dáng đặc trưng của phong cách giày Superga cùng với logo Superga vải in tinh tế được gắn vào thân giày đã trở thành điểm nhận dạng kinh điển cho thương hiệu Ý hơn 100 năm.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/2/2/221ssws_s00gjb0_f83_1.jpg',
     -- id_category
-    1,
+    7,
     -- id_brand
-    1,
+    3,
     -- status
-    'Còn hàng',
+    'Liên hệ',
     -- id_gender
-    1,
+    2,
     -- quantity
-    35
+    0
 );
 INSERT INTO price(id_item, price, date)
-VALUES (6, , '2022-02-18');
+VALUES (6, 512050, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(6, );
+VALUES(6, 3);
+INSERT INTO item_material(id_item, id_material)
+VALUES(6, 5);
 INSERT INTO item_size(id_item, id_size)
-VALUES(6, );
+VALUES(6, 35);
+INSERT INTO item_size(id_item, id_size)
+VALUES(6, 36);
+INSERT INTO item_size(id_item, id_size)
+VALUES(6, 37);
+INSERT INTO item_size(id_item, id_size)
+VALUES(6, 38);
+INSERT INTO item_size(id_item, id_size)
+VALUES(6, 39);
 INSERT INTO item_color(id_item, id_color)
-VALUES(6, );
+VALUES(6, 2);
+INSERT INTO item_color(id_item, id_color)
+VALUES(6, 6);
 
 -- Item 7
 INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
@@ -484,31 +516,35 @@ VALUES (
     -- id
     7,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Kappa dép quai ngang nam/nữ 304JPP0 A0W',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    'DÉP QUAI NGANG NAM/ NỮ KAPPA 304JPP0 A0W ĐEN-VÀNG giá mềm, êm chân, thời trang
+    DÉP QUAI NGANG NAM/ NỮ KAPPA 304JPP0 A0W ĐEN-VÀNG mang thiết kế basic, với dải banda in nổi bật trên quai dép. Sản phẩm nhẹ, mềm, vô cùng êm ái, dễ dàng di chuyểnvà lại rất thời trang.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/0/304jpp0-a0w-1.jpg',
     -- id_category
-    1,
+    5,
     -- id_brand
     1,
     -- status
     'Còn hàng',
     -- id_gender
-    1,
+    3,
     -- quantity
-    35
+    95
 );
 INSERT INTO price(id_item, price, date)
-VALUES (7, , '2022-02-18');
+VALUES (7, 271600, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(7, );
+VALUES(7, 1);
+INSERT INTO item_material(id_item, id_material)
+VALUES(7, 9);
 INSERT INTO item_size(id_item, id_size)
-VALUES(7, );
+VALUES(7, 42);
 INSERT INTO item_color(id_item, id_color)
-VALUES(7, );
+VALUES(7, 7);
+INSERT INTO item_color(id_item, id_color)
+VALUES(7, 8);
 
 -- Item 8
 INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
@@ -516,31 +552,37 @@ VALUES (
     -- id
     8,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Kappa dép quai ngang nam/nữ 304JPU0_CQ1 A0Y',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    'DÉP QUAI NGANG NAM/ NỮ KAPPA 304JPU0_CQ1 A0Y XÁM-ĐEN giá mềm, êm chân, thời trang
+    DÉP QUAI NGANG NAM/ NỮ KAPPA 304JPU0_CQ1 A0Y XÁM-ĐEN mang thiết kế basic, với dải banda in nổi bật trên thân dép. Sản phẩm nhẹ, mềm, vô cùng êm ái, dễ dàng di chuyểnvà lại rất thời trang.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/0/304jpu0_cq1-a0y-1.jpg',
     -- id_category
-    1,
+    5,
     -- id_brand
     1,
     -- status
-    'Còn hàng',
+    'Hết hàng',
     -- id_gender
-    1,
+    3,
     -- quantity
-    35
+    0
 );
 INSERT INTO price(id_item, price, date)
-VALUES (8, , '2022-02-18');
+VALUES (8, 271600, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(8, );
+VALUES(8, 1);
+INSERT INTO item_material(id_item, id_material)
+VALUES(8, 9);
 INSERT INTO item_size(id_item, id_size)
-VALUES(8, );
+VALUES(8, 39);
 INSERT INTO item_color(id_item, id_color)
-VALUES(8, );
+VALUES(8, 6);
+INSERT INTO item_color(id_item, id_color)
+VALUES(8, 2);
+INSERT INTO item_color(id_item, id_color)
+VALUES(8, 7);
 
 -- Item 9
 INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
@@ -548,31 +590,32 @@ VALUES (
     -- id
     9,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Superga giày thời trang cổ thấp unisex 219SSU3_S00GS90 XPR',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    'Giày đế cao su nữ giá rẻ thời trang Unisex Superga cổ thấp, với chất liệu đế làm từ cao su tự nhiên chống trơn trượt tốt, hạn chế mài mòn, càng di chuyển càng đàn hồi, bền bỉ theo thời gian. Thiết kế thanh lịch, form dáng đặc trưng của phong cách giày Superga cùng logo Superga vải in tinh tế được gắn vào thân giày đã trở thành điểm nhấn dạng kinh điển cho thương hiệu Ý hơn 100 năm, kết hợp màu sắc trung tính, dễ phối đồ. Dành cho các bạn trẻ yêu thích phong đôi giày đế cao su nam giá rẻ năng động, mới lạ, nhưng không kém phần trẻ trung, cá tính.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/2/1/219ssu3_s00gs90-xpr-1_ljz9-41.jpg',
     -- id_category
-    1,
+    6,
     -- id_brand
-    1,
+    3,
     -- status
-    'Còn hàng',
+    'Liên hệ',
     -- id_gender
-    1,
+    2,
     -- quantity
-    35
+    0
 );
 INSERT INTO price(id_item, price, date)
-VALUES (9, , '2022-02-18');
+VALUES (9, 580650, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(9, );
+VALUES(9, 3);
 INSERT INTO item_size(id_item, id_size)
-VALUES(9, );
+VALUES(9, 39);
 INSERT INTO item_color(id_item, id_color)
-VALUES(9, );
+VALUES(9, 1);
+INSERT INTO item_color(id_item, id_color)
+VALUES(9, 2);
 
 -- Item 10
 INSERT INTO item(id, name, description, image, id_category, id_brand, status, id_gender, quantity)
@@ -580,31 +623,102 @@ VALUES (
     -- id
     10,
     -- name
-    'Kappa xăng đan nam 361511W A12',
+    'Superga giày lười nữ 221SSWS_S00GJB0 901',
     -- description
-    'XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY ôm chân, êm ái, năng động
-XĂNG ĐAN NAM KAPPA 361511W A12 XANH NAVY mang thiết kế basic, các chữ cái Kappa in nổi bật trên thân giày. Sản phẩm nhẹ, mềm, êm ái, dễ dàng di chuyển và lại rất thời trang, có thể phối cùng nhiều trang phục khác nhau.',
+    '• Bộ sưu tập: 2750
+• Chất liệu: Đế ngoài: 100% Cao su; Bề mặt: 100% Cotton; Lớp lót: 100% Cotton. Vải bông tinh khiết, thoáng khí cùng đế ngoài cao su tự nhiên lưu hóa bền bỉ, chống trơn trượt tốt.
+• Thiết kế: Với thiết kế thanh lịch, form dáng đặc trưng của phong cách giày Superga cùng với logo Superga vải in tinh tế được gắn vào thân giày đã trở thành điểm nhận dạng kinh điển cho thương hiệu Ý hơn 100 năm.
+• Đế cao: 2 cm
+• Sản xuất tại: Việt Nam.
+• Xuất xứ thương hiệu: Italia.',
     -- image
-    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/3/6/361511w-a12-1.jpg',
+    'https://cdn.hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/2/2/221ssws_s00gjb0_901_5.jpg',
     -- id_category
-    1,
+    7,
     -- id_brand
-    1,
+    3,
     -- status
     'Còn hàng',
     -- id_gender
-    1,
+    2,
     -- quantity
-    35
+    108
 );
 INSERT INTO price(id_item, price, date)
-VALUES (10, , '2022-02-18');
+VALUES (10, 512050, '2022-02-19');
 INSERT INTO item_material(id_item, id_material)
-VALUES(10, );
+VALUES(10, 3);
+INSERT INTO item_material(id_item, id_material)
+VALUES(10, 5);
 INSERT INTO item_size(id_item, id_size)
-VALUES(10, );
+VALUES(10, 35);
+INSERT INTO item_size(id_item, id_size)
+VALUES(10, 36);
+INSERT INTO item_size(id_item, id_size)
+VALUES(10, 37);
+INSERT INTO item_size(id_item, id_size)
+VALUES(10, 38);
+INSERT INTO item_size(id_item, id_size)
+VALUES(10, 39);
 INSERT INTO item_color(id_item, id_color)
-VALUES(10, );
+VALUES(10, 6);
+INSERT INTO item_color(id_item, id_color)
+VALUES(10, 2);
 
 
 -- Insert into users
+INSERT INTO users(id, name, username, password, email, mobile, id_gender, dob, start_at, status, address, role)
+VALUES(
+    -- id
+    1,
+    -- name
+    'Dương',
+    -- username
+    'duongphamhn97',
+    -- password
+    '123',
+    -- email
+    'duongphamhn97@gmail.com',
+    -- mobile
+    '0847138967',
+    -- id_gender
+    1,
+    -- dob
+    '1997-09-19',
+    -- start_at
+    NULL,
+    -- status
+    'Chưa mua hàng',
+    -- address
+    'Hà Nội',
+    -- role
+    'Khách hàng'
+);
+
+INSERT INTO users(id, name, username, password, email, mobile, id_gender, dob, start_at, status, address, role)
+VALUES(
+    -- id
+    2,
+    -- name
+    'San',
+    -- username
+    'sannl',
+    -- password
+    '123',
+    -- email
+    'sannl@shoe.com',
+    -- mobile
+    '0123456789',
+    -- id_gender
+    2,
+    -- dob
+    '1998-03-15',
+    -- start_at
+    '2022-02-19',
+    -- status
+    'Đang làm việc',
+    -- address
+    'Hà Nội',
+    -- role
+    'Nhân viên'
+);
