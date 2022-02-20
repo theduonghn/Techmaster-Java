@@ -95,3 +95,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/datab
 ### Bài 2
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi02/database%20shoe
+
+### Bài 3
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi02/database%20library
