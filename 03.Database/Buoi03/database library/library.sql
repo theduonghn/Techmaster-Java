@@ -117,7 +117,7 @@ CREATE TABLE borrow_slip(
     id_reader INT NOT NULL,
     type ENUM('At place', 'Bring home'),
     borrow_date DATE NOT NULL,
-    return_date DATE NOT NULL,
+    last_date_to_return DATE NOT NULL,
 
     FOREIGN KEY(id_employee) REFERENCES employee(id),
     FOREIGN KEY(id_reader) REFERENCES reader(id)
@@ -201,3 +201,120 @@ CREATE TABLE fine_ban(
 
     FOREIGN KEY(id_fine) REFERENCES fine(id)
 );
+
+
+-- Insert into shelf
+INSERT INTO shelf(number) VALUES(1); -- id: 1
+INSERT INTO shelf(number) VALUES(2); -- id: 2
+INSERT INTO shelf(number) VALUES(3); -- id: 3
+
+-- Insert into publishing_company
+INSERT INTO publishing_company(name, address, phone) -- id: 1
+VALUES('Nhà Xuất Bản Thế Giới', '46 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội', '024 3825 3841');
+INSERT INTO publishing_company(name, address, phone) -- id: 2
+VALUES('Nhà Xuất Bản Thanh Niên', '64 Bà Triệu, Hoàn Kiếm, Hà Nội', '090 455 83 69');
+
+-- Insert into document
+INSERT INTO document(name, id_publishing_company, pages, year, price, quantity, id_shelf) -- id: 1
+VALUES('Kỷ Luật Tự Giác', 1, 216, 2020, 57000, 11, 1);
+INSERT INTO document(name, id_publishing_company, pages, year, price, quantity, id_shelf) -- id: 2
+VALUES('Ám Ảnh Sợ Xã Hội - Chạy Trốn Hay Đối Mặt', 2, 304, 2021, 88900, 12, 2);
+INSERT INTO document(name, id_publishing_company, pages, year, price, quantity, id_shelf) -- id: 3
+VALUES('1 Ngày Bằng 48 Giờ - Sổ tay Quản Lí Thời Gian Hiệu Quả', 2, 208, 2021, 54000, 2, 3);
+
+-- Insert into category
+INSERT INTO category(name) VALUES('Sách Tiếng Việt'); -- id: 1
+INSERT INTO category(name) VALUES('Sách kĩ năng sống'); -- id: 2
+INSERT INTO category(name) VALUES('Sách tư duy'); -- id: 3
+INSERT INTO category(name) VALUES('Sách quản lý thời gian'); -- id: 4
+INSERT INTO category(name) VALUES('Sách tâm lý'); -- id: 5
+
+-- Insert into document_category
+INSERT INTO document_category(id_document, id_category) VALUES(1, 1);
+INSERT INTO document_category(id_document, id_category) VALUES(1, 2);
+INSERT INTO document_category(id_document, id_category) VALUES(1, 3);
+INSERT INTO document_category(id_document, id_category) VALUES(2, 1);
+INSERT INTO document_category(id_document, id_category) VALUES(2, 2);
+INSERT INTO document_category(id_document, id_category) VALUES(2, 5);
+INSERT INTO document_category(id_document, id_category) VALUES(3, 1);
+INSERT INTO document_category(id_document, id_category) VALUES(3, 2);
+INSERT INTO document_category(id_document, id_category) VALUES(3, 4);
+
+-- Insert into author
+INSERT INTO author(name, gender, address, email, mobile, year_of_birth, year_of_death)
+VALUES('Tiểu Dã', 'Female', 'Trung Quốc', 'xiao@gmail.com', NULL, 1990, NULL);
+INSERT INTO author(name, gender, address, email, mobile, year_of_birth, year_of_death)
+VALUES('Lý Thế Cường', 'Male', 'Việt Nam', 'cuong@gmail.com', '01234567841', 1985, NULL);
+INSERT INTO author(name, gender, address, email, mobile, year_of_birth, year_of_death)
+VALUES('Instant Research Institude', 'Male', 'Hoa Kì', 'iri@gmail.com', NULL, 1974, NULL);
+
+-- Insert into document_author
+INSERT INTO document_author(id_document, id_author) VALUES(1, 1);
+INSERT INTO document_author(id_document, id_author) VALUES(2, 2);
+INSERT INTO document_author(id_document, id_author) VALUES(3, 3);
+
+-- Insert into employee
+INSERT INTO employee(name, gender, address, email, mobile, date_of_birth, status, start_at, salary, role)
+VALUES('Linh', 'Female', 'Hà Nội', 'linh@gmail.com', '0123548964', '1999-08-13', 'Working', '2021-02-21', 8000000, 3);
+INSERT INTO employee(name, gender, address, email, mobile, date_of_birth, status, start_at, salary, role)
+VALUES('Nam', 'Male', 'Hải Phòng', 'nam@gmail.com', '0215493154', '1986-07-14', 'Leaved', '2013-01-19', 15000000, 1);
+INSERT INTO employee(name, gender, address, email, mobile, date_of_birth, status, start_at, salary, role)
+VALUES('Nga', 'Female', 'Bắc Ninh', 'nga@gmail.com', '0216523987', '1955-09-04', 'Retired', '1995-07-09', 13500000, 2);
+
+-- Insert into reader
+INSERT INTO reader(name, gender, address, email, mobile, date_of_birth, status)
+VALUES('Vu', 'Male', 'Thanh Hoá', 'vu@gmail.com', '01323597415', '1997-05-17', 'Banned from the library');
+INSERT INTO reader(name, gender, address, email, mobile, date_of_birth, status)
+VALUES('Trang', 'Female', 'Nam Định', 'trang@gmail.com', '0132527841', '1995-09-21', 'Normal');
+
+-- Insert into reader_document
+INSERT INTO reader_document(id_reader, id_document, borrow_quantity, return_quantity, borrow_date)
+VALUES(1, 1, 2, 0, '2021-09-15');
+INSERT INTO reader_document(id_reader, id_document, borrow_quantity, return_quantity, borrow_date)
+VALUES(2, 2, 1, 1, '2022-01-02');
+INSERT INTO reader_document(id_reader, id_document, borrow_quantity, return_quantity, borrow_date)
+VALUES(2, 3, 1, 0, '2022-02-12');
+
+-- Insert into borrow_slip
+INSERT INTO borrow_slip(id_employee, id_reader, type, borrow_date, last_date_to_return)
+VALUES(1, 1, 'Bring home', '2021-09-15', '2021-09-29');
+INSERT INTO borrow_slip(id_employee, id_reader, type, borrow_date, last_date_to_return)
+VALUES(1, 2, 'At place', '2022-01-02', '2022-01-02');
+INSERT INTO borrow_slip(id_employee, id_reader, type, borrow_date, last_date_to_return)
+VALUES(1, 2, 'Bring home', '2022-012-12', '2022-02-24');
+
+-- Insert into borrow_slip_document
+INSERT INTO borrow_slip_document(id_borrow_slip, id_document, quantity)
+VALUES(1, 1, 2);
+INSERT INTO borrow_slip_document(id_borrow_slip, id_document, quantity)
+VALUES(2, 2, 1);
+INSERT INTO borrow_slip_document(id_borrow_slip, id_document, quantity)
+VALUES(3, 3, 1);
+
+-- Insert into return_slip
+INSERT INTO return_slip(id_employee, id_reader, borrow_date, return_date)
+VALUES(1, 2, '2022-01-02', '2022-01-02');
+
+-- Insert into return_slip_document
+INSERT INTO return_slip_document(id_return_slip, id_document, quantity)
+VALUES(1, 2, 1);
+
+-- Insert into fine
+INSERT INTO fine(id_employee, id_reader, date, reason, type) -- id: 1
+VALUES(1, 1, '2021-09-29', 'Làm mất sách', 'Pay documents');
+INSERT INTO fine(id_employee, id_reader, date, reason, type) -- id: 2
+VALUES(1, 1, '2021-09-29', 'Làm mất sách', 'Pay money');
+INSERT INTO fine(id_employee, id_reader, date, reason, type) -- id: 3
+VALUES(1, 1, '2021-10-18', 'Phá hoại tài sản thư viện', 'Ban');
+
+-- Insert into fine_document
+INSERT INTO fine_document(id_fine, id_document, quantity)
+VALUES(1, 1, 1);
+
+-- Insert into fine_money
+INSERT INTO fine_money(id_fine, amount)
+VALUES(2, 57000);
+
+-- Insert into fine_ban
+INSERT INTO fine_ban(id_fine, type, days)
+VALUES(3, 'Ban from the library', 365);
