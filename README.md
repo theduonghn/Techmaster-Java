@@ -103,3 +103,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi03/datab
 ### Bài 4
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi04/query%20database%20library%20and%20sakila/query.md
+
+### Bài 5
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi05/database%20quiz/quiz.md
