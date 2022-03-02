@@ -107,3 +107,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi04/query
 ### Bài 5
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi05/database%20quiz/quiz.md
+
+### Bài 7
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi07/jdbc_blog2
