@@ -17,7 +17,6 @@ public class Service {
     public List<Post> getAllPosts() {
         String query = "SELECT * FROM `post`";
         List<Post> list = new ArrayList<>();
-
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
@@ -45,7 +44,6 @@ public class Service {
     public List<Post> getPublicPosts() {
         String query = "SELECT * FROM `post` WHERE status = 'public'";
         List<Post> list = new ArrayList<>();
-
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
@@ -72,7 +70,6 @@ public class Service {
 
     public Post getPostById(int findId) {
         String query = "SELECT * FROM `post` WHERE id = " + findId;
-
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
@@ -100,9 +97,7 @@ public class Service {
                 "SELECT p.id AS 'post_id', p.title AS 'post_title', p.content AS 'post_content', a.id AS 'author_id', a.name AS 'author_name', JSON_ARRAYAGG(t.name) AS 'tags', p.create_at AS 'post_create_at'\n" +
                         "FROM `post` p INNER JOIN `author` a ON p.id_author = a.id\n" +
                         "INNER JOIN `post_tag` pt ON p.id = pt.id_post\n" + "INNER JOIN `tag` t ON t.id = pt.id_tag\n" +
-                        "WHERE p.id = " + post.getId() + "\n" +
-                        "GROUP BY p.id";
-
+                        "WHERE p.id = " + post.getId() + "\n" + "GROUP BY p.id";
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
@@ -121,6 +116,60 @@ public class Service {
                 System.out.println("Tags: " + tags);
                 System.out.println("Create at: " + post_create_at);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addPost(Post post) {
+        String query =
+                "INSERT INTO `post`(`title`, `content`, `description`, `thumbnail`, `id_category`, `id_author`, `create_at`, `status`)" +
+                        "VALUES('" + post.getTitle() + "', '" + post.getContent() + "', '" + post.getDescription() +
+                        "', '" + post.getThumbnail() + "', '" + post.getId_category() + "', '" + post.getId_author() +
+                        "', CURRENT_DATE(), '" + post.getStatus() + "') ";
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Thêm bài viết thành công");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deletePost(Post post) {
+        String query1 = "DELETE FROM post_tag WHERE id_post = " + post.getId();
+        String query2 = "DELETE FROM discuss WHERE id_post = " + post.getId();
+        String query3 = "DELETE FROM post WHERE id = " + post.getId();
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(query1);
+            statement.executeUpdate(query2);
+            statement.executeUpdate(query3);
+            System.out.println("Xoá bài viết thành công");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updatePostTitle(Post post, String newTitle) {
+        post.setTitle(newTitle);
+        String query = "UPDATE post SET title = '" + newTitle + "' WHERE id = " + post.getId();
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Cập nhật tiêu đề bài viết thành công");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updatePostContent(Post post, String newContent) {
+        post.setTitle(newContent);
+        String query = "UPDATE post SET content = '" + newContent + "' WHERE id = " + post.getId();
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Cập nhật nội dung bài viết thành công");
         } catch (SQLException e) {
             e.printStackTrace();
         }
