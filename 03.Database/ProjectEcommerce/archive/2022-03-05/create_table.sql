@@ -15,9 +15,7 @@ DROP TABLE IF EXISTS role
 
 CREATE TABLE role(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	id_users INT NOT NULL,
-	role INT NOT NULL,
-	FOREIGN KEY (id_users) REFERENCES users(id) ON DELETE CASCADE
+	role INT NOT NULL
 )
 
 DROP TABLE IF EXISTS users_role
@@ -66,6 +64,7 @@ CREATE TABLE shop(
 	id_owner INT NOT NULL,
 	FOREIGN KEY(id_owner) REFERENCES users (id),
 	name TEXT NOT NULL,
+	address TEXT NOT NULL,
 	create_at DATE,
 	status ENUM('normal', 'locked') NOT NULL
 )
@@ -86,6 +85,8 @@ CREATE TABLE product(
 	FOREIGN KEY (id_country) REFERENCES country (id)
 )
 
+DROP TABLE IF EXISTS discuss 
+
 CREATE TABLE discuss(
 	id INT PRIMARY KEY AUTO_INCREMENT ,
 	id_users INT NOT NULL,
@@ -94,6 +95,8 @@ CREATE TABLE discuss(
 	FOREIGN KEY (id_product) REFERENCES product (id) ON DELETE CASCADE ,
 	discuss TEXT NOT NULL
 )
+
+DROP TABLE IF EXISTS rating 
 
 CREATE TABLE rating(
 	id INT PRIMARY KEY AUTO_INCREMENT ,
@@ -120,13 +123,7 @@ CREATE TABLE cart_product(
 	FOREIGN KEY (id_product) REFERENCES product (id)
 )
 
-CREATE TABLE product_category(
-	id_product INT,
-	id_category INT ,
-	PRIMARY KEY (id_product, id_category),
-	FOREIGN KEY (id_product) REFERENCES product (id) ON DELETE CASCADE,
-	FOREIGN KEY (id_category) REFERENCES category (id) ON DELETE CASCADE
-)
+DROP TABLE IF EXISTS product_tag 
 
 CREATE TABLE product_tag(
 	id_product INT,
@@ -144,6 +141,8 @@ CREATE TABLE orders(
 	payment_method ENUM('debit/credit', 'cod') NOT NULL,
 	status TEXT
 )
+
+DROP TABLE IF EXISTS product_orders 
 
 CREATE TABLE product_orders(
 	id_product  INT,
@@ -181,6 +180,8 @@ CREATE TABLE orders_voucher(
 	FOREIGN KEY (id_orders) REFERENCES orders (id) ON DELETE CASCADE ,
 	FOREIGN KEY (id_voucher) REFERENCES voucher (id)
 )
+
+DROP TABLE IF EXISTS price 
 
 CREATE TABLE price(
 	id INT PRIMARY KEY AUTO_INCREMENT ,
