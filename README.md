@@ -111,6 +111,8 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi05/datab
 ### Bài 7
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi07/jdbc_blog2
+https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi07/jdbc_user
 
 ### Đồ án
+
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/ProjectEcommerce
