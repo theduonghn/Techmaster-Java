@@ -116,3 +116,9 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi07/jdbc_
 ### Đồ án
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/ProjectEcommerce
+
+## Bài tập JavaScript
+
+### Bài 1
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi01/homework1
