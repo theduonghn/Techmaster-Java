@@ -5,8 +5,7 @@
 
 function reverseSentence(sentence) {
   let reversedCaseSentence = "";
-  for (let i = 0; i < sentence.length; i++) {
-    let char = sentence[i];
+  for (let char of sentence) {
     if (char == char.toUpperCase()) {
       reversedCaseSentence += char.toLowerCase();
     } else {
@@ -14,11 +13,6 @@ function reverseSentence(sentence) {
     }
   }
   let words = reversedCaseSentence.split(" ");
-  //   let reversedSentence = "";
-  //   for (i = words.length - 1; i > 0; i--) {
-  //     reversedSentence += words[i] + " ";
-  //   }
-  //   reversedSentence += words[0];
   return words.reverse().join(" ");
 }
 
