@@ -122,3 +122,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/ProjectEcomm
 ### Bài 1
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi01/homework1
+
+### Bài 3
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi03/homework
