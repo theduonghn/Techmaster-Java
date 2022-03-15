@@ -6,7 +6,7 @@
 function spelling(word) {
   let result = [];
   let currentSpelling = "";
-  for (char of word) {
+  for (let char of word) {
     currentSpelling += char;
     result.push(currentSpelling);
   }

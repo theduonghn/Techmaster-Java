@@ -20,12 +20,12 @@
 
 function findByIndex(arr, idx) {
   let result = "";
-  for (i of idx) {
+  idx.forEach((i) => {
     let rowColumn = findRowColumn(i);
     let row = rowColumn[0];
     let column = rowColumn[1];
     result += arr[row][column];
-  }
+  });
   return result;
 }
 

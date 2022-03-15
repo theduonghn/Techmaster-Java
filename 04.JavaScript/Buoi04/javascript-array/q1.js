@@ -6,14 +6,10 @@
 function minmax(arr) {
   let min = arr[0];
   let max = arr[0];
-  for (let e of arr) {
-    if (e < min) {
-      min = e;
-    }
-    if (e > max) {
-      max = e;
-    }
-  }
+  arr.forEach((e) => {
+    if (e < min) min = e;
+    if (e > max) max = e;
+  });
   return [min, max];
 }
 

@@ -15,12 +15,12 @@
 
 function fruitSalad(fruits) {
   let pieces = [];
-  for (let fruit of fruits) {
+  fruits.forEach((fruit) => {
     let length = fruit.length;
     let halfLength = Math.floor(length / 2);
     pieces.push(fruit.slice(0, halfLength));
     pieces.push(fruit.slice(halfLength));
-  }
+  });
   return pieces.sort().join("");
 }
 

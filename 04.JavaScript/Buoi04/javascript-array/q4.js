@@ -6,7 +6,7 @@
 function secondLargest(numbers) {
   let max = numbers[0];
   let secondMax;
-  for (let num of numbers) {
+  numbers.forEach((num) => {
     if (num > max) {
       secondMax = max;
       max = num;
@@ -15,7 +15,7 @@ function secondLargest(numbers) {
     } else if (isNaN(secondMax) && num != max) {
       secondMax = num;
     }
-  }
+  });
   return secondMax;
 }
 

@@ -5,12 +5,10 @@
 
 function societyName(names) {
   let sortedNames = [...names].sort();
-  console.log(names);
-  let result = "";
-  for (name of sortedNames) {
-    result += name[0].toUpperCase();
-  }
-  return result;
+  return sortedNames.reduce(
+    (result, name) => result + name[0].toUpperCase(),
+    ""
+  );
 }
 
 console.log(societyName(["Adam", "Sarah", "Malcolm"]));

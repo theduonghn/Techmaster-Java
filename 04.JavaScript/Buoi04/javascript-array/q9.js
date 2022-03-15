@@ -31,16 +31,12 @@ function calcResult(match) {
 
 function calculateScore(arr) {
   let score = 0;
-  for (match of arr) {
+  arr.forEach((match) => {
     score += calcResult(match);
-  }
-  if (score == 0) {
-    return "Tie";
-  } else if (score > 0) {
-    return "Tí";
-  } else {
-    return "Tèo";
-  }
+  });
+  if (score == 0) return "Tie";
+  else if (score > 0) return "Tí";
+  else return "Tèo";
 }
 
 console.log(

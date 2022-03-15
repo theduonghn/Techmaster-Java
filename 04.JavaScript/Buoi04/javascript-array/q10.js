@@ -19,11 +19,7 @@
 // getTotalPrice(order) // result 10.4
 
 function getTotalPrice(order) {
-  let result = 0;
-  for (let item of order) {
-    result += item.quantity * item.price;
-  }
-  return result;
+  return order.reduce((sum, item) => sum + item.quantity * item.price, 0);
 }
 
 console.log(

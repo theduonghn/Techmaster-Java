@@ -14,21 +14,17 @@
 
 function calcAvgNotes(arr) {
   let result = [];
-  for (e of arr) {
-    let newObj = {};
-    newObj.name = e.name;
+  arr.forEach((e) => {
+    let newObj = { name: e.name };
     if (e.notes.length == 0) {
       newObj.avg = 0;
     } else {
-      let sumNotes = 0;
-      for (let note of e.notes) {
-        sumNotes += note;
-      }
+      let sumNotes = e.notes.reduce((sum, note) => sum + note, 0);
       let avgNotes = sumNotes / e.notes.length;
       newObj.avg = avgNotes;
     }
     result.push(newObj);
-  }
+  });
   return result;
 }
 
