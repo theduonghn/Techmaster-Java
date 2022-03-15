@@ -5,7 +5,7 @@
 // Output :
 // "2015/02/02"
 
-function max_date(dateStrings) {
+function min_date(dateStrings) {
   let maxDate = new Date(dateStrings[0]);
   for (let i = 1; i < dateStrings.length; i++) {
     let date = new Date(dateStrings[i]);
@@ -20,4 +20,4 @@ function max_date(dateStrings) {
   ].join("/");
 }
 
-console.log(max_date(["2015/02/01", "2015/02/02", "2015/01/03"]));
+console.log(min_date(["2015/02/01", "2015/02/02", "2015/01/03"]));
