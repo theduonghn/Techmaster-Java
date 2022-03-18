@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(218, 218, 218);
+}
+
+.container {
+  width: 500px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  padding: 5px;
+}
+
+p {
+  padding: 5px;
+}
+
+input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-calculate-bmi {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bmi {
+  font-weight: bold;
+}

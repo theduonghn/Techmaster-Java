@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <h2>Tip Calculator</h2>
+        <label class="input-label">Bill amount</label>
+        <div class="flex">
+          <input type="text" name="Weight" id="input-amount" />
+        </div>
+        <label class="input-label">Number of guests</label>
+        <div class="flex">
+          <input type="text" name="Height" id="input-guests" />
+        </div>
+        <label class="input-label">Service quality</label>
+        <div class="flex">
+          <select id="input-quality" name="cars">
+            <option value="30">30% - Outstanding</option>
+            <option value="20">20% - Good</option>
+            <option value="15">15% - It's ok</option>
+            <option value="5">5% Terrible</option>
+          </select>
+        </div>
+        <p>Tip $<span class="tip-each-person"></span> each person</p>
+        <div class="justify-center">
+          <button type="button" class="btn-calculate-tip">Calculate</button>
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <!-- Scripts -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <script src="script.js"></script>
+</html>

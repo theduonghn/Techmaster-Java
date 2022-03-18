@@ -123,6 +123,19 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/ProjectEcomm
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi01/homework1
 
+### Bài 2
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi02/control-flow
+
 ### Bài 3
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi03/homework
+
+### Bài 4
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi04/javascript-array
+
+### Bài 5
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi05/homework1
+https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi05/homework2

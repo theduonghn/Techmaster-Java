@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: rgb(218, 218, 218);
+}
+
+.container {
+  width: 300px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  padding: 5px;
+}
+
+p {
+  padding: 5px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 5px;
+}
+
+.btn-calculate-tip {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tip-each-person {
+  font-weight: bold;
+}
+
+.input-label {
+  font-weight: bold;
+}
