@@ -1,0 +1,15 @@
+li {
+  list-style: none;
+}
+
+li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 400px;
+}
+
+.btn {
+  width: 80px;
+}

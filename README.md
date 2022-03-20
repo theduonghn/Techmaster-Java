@@ -137,5 +137,9 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi04/jav
 
 ### Bài 5
 
-https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi05/homework1
-https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi05/homework2
+https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi05/homework1
+https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi05/homework2
+
+### Bài 6
+
+https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi06/jquery-todo
