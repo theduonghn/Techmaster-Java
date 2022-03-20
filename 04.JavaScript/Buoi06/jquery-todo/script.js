@@ -87,6 +87,14 @@ function clearAllTasks($taskList) {
 }
 
 $(function () {
+  // Prevent form submit when press enter key
+  $(window).keydown(function (event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
   const $taskList = $(".task-list");
   const $template = $(
     document.querySelector(".task-template").content.firstElementChild
@@ -98,7 +106,8 @@ $(function () {
   renderTasks($taskList, $template);
   renderNumTasks();
 
-  $btnAddNewTask.on("click", function () {
+  $btnAddNewTask.on("click", function (e) {
+    e.preventDefault();
     let content = $inputNewTask.val().trim();
     if (content != "") {
       addTask(content, $taskList, $template);
