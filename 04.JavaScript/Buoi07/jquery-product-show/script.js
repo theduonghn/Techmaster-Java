@@ -36,7 +36,7 @@ const products = [
   },
 ];
 
-function createProduct(product) {
+function create$product(product) {
   const $template = $(
     document.querySelector(".product-template").content.firstElementChild
   );
@@ -55,7 +55,7 @@ function createProduct(product) {
 function create$products() {
   const list = [];
   products.forEach((product) => {
-    let $product = createProduct(product);
+    let $product = create$product(product);
     list.push($product);
   });
   return list;
@@ -63,8 +63,8 @@ function create$products() {
 
 function renderProducts() {
   const $productList = $(".product-list");
-  let list$product = create$products();
-  $.each(list$product, function (_index, $product) {
+  let $products = create$products();
+  $.each($products, function (_index, $product) {
     $product.appendTo($productList);
   });
 }
@@ -74,9 +74,9 @@ function toggleAvailable(e) {
   $.each($(".product"), function (_index, product) {
     const $product = $(product);
     if ($product.data().quantity == 0 && isChecked) {
-      $product.hide();
+      $(product).addClass("hidden-by-status");
     } else {
-      $product.show();
+      $(product).removeClass("hidden-by-status");
     }
   });
 }
@@ -117,11 +117,63 @@ function sortProducts(e) {
   }
 }
 
+function createCategories() {
+  let categories = [];
+  products.forEach((product) => {
+    const category = product.category;
+    if (!categories.includes(category)) {
+      categories.push(category);
+    }
+  });
+  return categories;
+}
+
+function create$category(category) {
+  let $template = $(
+    document.querySelector(".category-template").content.firstElementChild
+  );
+  let $clone = $template.clone();
+  $clone.text(category);
+  $clone.val(category);
+
+  return $clone;
+}
+
+function render$categories() {
+  const categories = createCategories();
+  const $selectCategory = $("#select-category");
+  categories.forEach((category) => {
+    const $category = create$category(category);
+    $category.appendTo($selectCategory);
+  });
+}
+
+function filterByCategory(e) {
+  const option = e.target.value;
+  const $products = $(".product");
+  if (option == "") {
+    $.each($products, function (_index, product) {
+      $(product).removeClass("hidden-by-category");
+    });
+  } else {
+    $.each($products, function (_index, product) {
+      if ($(product).data().category != option) {
+        $(product).addClass("hidden-by-category");
+      } else {
+        $(product).removeClass("hidden-by-category");
+      }
+    });
+  }
+}
+
 $(function () {
   const $checkboxAvailable = $("#checkbox-available");
   $checkboxAvailable.on("change", toggleAvailable);
   const $selectSort = $("#select-sort");
   $selectSort.on("change", sortProducts);
+  const $selectCategory = $("#select-category");
+  $selectCategory.on("change", filterByCategory);
 
   renderProducts();
+  render$categories();
 });

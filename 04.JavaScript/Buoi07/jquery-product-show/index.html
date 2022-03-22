@@ -12,6 +12,14 @@
   <body>
     <div class="container">
       <div class="product-filter">
+        <label for="select-category">Lọc theo thể loại</label>
+        <select name="" id="select-category">
+          <option value="">---</option>
+          <template class="category-template">
+            <option value="">Category</option>
+          </template>
+        </select>
+
         <label for="select-sort">Sắp xếp theo</label>
         <select name="" id="select-sort">
           <option disabled selected>---</option>
@@ -20,6 +28,7 @@
           <option value="3">Số lượng tăng dần</option>
           <option value="4">Số lượng giảm dần</option>
         </select>
+
         <input type="checkbox" id="checkbox-available" />
         <label for="checkbox-available">Còn hàng</label>
       </div>
