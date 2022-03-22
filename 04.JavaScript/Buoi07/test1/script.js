@@ -36,7 +36,10 @@ const products = [
   },
 ];
 
-function createProduct($template, product) {
+function createProduct(product) {
+  const $template = $(
+    document.querySelector(".product-template").content.firstElementChild
+  );
   let $clone = $template.clone();
   $clone.find(".product-name").text(product.name);
   $clone.find(".product-category").text(product.category);
@@ -49,25 +52,26 @@ function createProduct($template, product) {
   return $clone;
 }
 
-function createList$product($template, products) {
+function create$products() {
   const list = [];
   products.forEach((product) => {
-    let $product = createProduct($template, product);
+    let $product = createProduct(product);
     list.push($product);
   });
   return list;
 }
 
-function renderProducts($template, $productList, products) {
-  let list$product = createList$product($template, products);
-  $.each(list$product, function (index, $product) {
+function renderProducts() {
+  const $productList = $(".product-list");
+  let list$product = create$products();
+  $.each(list$product, function (_index, $product) {
     $product.appendTo($productList);
   });
 }
 
 function toggleAvailable(e) {
   const isChecked = e.target.checked;
-  $.each($(".product"), function (index, product) {
+  $.each($(".product"), function (_index, product) {
     const $product = $(product);
     if ($product.data().quantity == 0 && isChecked) {
       $product.hide();
@@ -89,8 +93,9 @@ function sortBy(option) {
       return dataOfProductB[option.key] - dataOfProductA[option.key];
     }
   });
-  $.each(products, function (item, product) {
-    $(product).appendTo();
+  const $productList = $(".product-list");
+  $.each(products, function (_item, product) {
+    $(product).appendTo($productList);
   });
 }
 
@@ -113,14 +118,10 @@ function sortProducts(e) {
 }
 
 $(function () {
-  const $template = $(
-    document.querySelector(".product-template").content.firstElementChild
-  );
-  const $productList = $(".product-list");
   const $checkboxAvailable = $("#checkbox-available");
   $checkboxAvailable.on("change", toggleAvailable);
   const $selectSort = $("#select-sort");
   $selectSort.on("change", sortProducts);
 
-  renderProducts($template, $productList, products);
+  renderProducts();
 });
