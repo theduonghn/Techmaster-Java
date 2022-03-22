@@ -1,27 +1,16 @@
-let tasks = initTasks();
+let tasks = loadTasks();
 
-function initTasks() {
-  let tasks;
-  let localStorageTasks = localStorage.getItem("tasks");
-  if (localStorageTasks == null) {
-    tasks = [
-      { id: 1, content: "Java" },
-      { id: 2, content: "HTML" },
-      { id: 3, content: "CSS" },
-      { id: 4, content: "JS" },
-      { id: 5, content: "SQL" },
-    ];
+function loadTasks() {
+  let data = localStorage.getItem("tasks");
+  if (data) {
+    tasks = JSON.parse(data);
   } else {
-    tasks = JSON.parse(localStorageTasks);
+    tasks = [];
   }
   return tasks;
 }
 
-function getTasks() {
-  return JSON.parse(localStorage.getItem("tasks"));
-}
-
-function setTasks() {
+function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
@@ -63,7 +52,7 @@ function addTask(content, $taskList, $template) {
   let id = Math.floor(Math.random() * 900000);
   let newTask = { id: id, content: content };
   tasks.push(newTask);
-  setTasks();
+  saveTasks();
   console.log(tasks);
   let $task = createTask($template, newTask);
   $task.appendTo($taskList);
@@ -74,14 +63,14 @@ function deleteTask(id) {
   let index = tasks.findIndex((task) => task.id == id);
   if (index != -1) {
     tasks.splice(index, 1);
-    setTasks();
+    saveTasks();
     renderNumTasks();
   }
 }
 
 function clearAllTasks($taskList) {
   tasks.length = 0; // Remove all elements
-  setTasks();
+  saveTasks();
   $taskList.html("");
   renderNumTasks();
 }

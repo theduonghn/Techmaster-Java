@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="product-filter">
+        <label for="select-sort">Sắp xếp theo</label>
+        <select name="" id="select-sort">
+          <option disabled selected>---</option>
+          <option value="1">Giá tăng dần</option>
+          <option value="2">Giá giảm dần</option>
+          <option value="3">Số lượng tăng dần</option>
+          <option value="4">Số lượng giảm dần</option>
+        </select>
+        <input type="checkbox" id="checkbox-available" />
+        <label for="checkbox-available">Còn hàng</label>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+          </tr>
+        </thead>
+        <tbody class="product-list">
+          <!-- <tr class="product">
+            <td>iPhone 14</td>
+            <td>Điện thoại</td>
+            <td>30000000</td>
+            <td>0</td>
+          </tr>
+          <tr class="product">
+            <td>iPhone 13</td>
+            <td>Điện thoại</td>
+            <td>15000000</td>
+            <td>101</td>
+          </tr>
+          <tr class="product">
+            <td>Macbook</td>
+            <td>Máy tính</td>
+            <td>25500000</td>
+            <td>12</td>
+          </tr>
+          <tr class="product">
+            <td>Dell</td>
+            <td>Máy tính</td>
+            <td>15000000</td>
+            <td>0</td>
+          </tr> -->
+        </tbody>
+        <template class="product-template">
+          <tr class="product">
+            <td class="product-name">Đồng hồ Casio</td>
+            <td class="product-category">Đồng hồ</td>
+            <td class="product-price">300000</td>
+            <td class="product-quantity">89</td>
+          </tr>
+        </template>
+      </table>
+    </div>
+  </body>
+
+  <!-- Scripts -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <script src="script.js"></script>
+</html>
