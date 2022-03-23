@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  width: 600px;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-manager {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-wrapper {
+  margin-left: -1px;
+  margin-right: -1px;
+}
