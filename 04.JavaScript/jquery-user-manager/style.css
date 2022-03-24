@@ -14,13 +14,13 @@
 }
 
 .container {
-  width: 600px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 table {
-  width: 600px;
+  width: 800px;
   border-collapse: separate;
   border-spacing: 1px;
 }
