@@ -147,3 +147,7 @@ https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi06/jquery-todo
 ### Bài 7
 
 https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi07/jquery-product-show
+
+### User Manager
+
+https://theduonghn.github.io/Techmaster-Java/04.JavaScript/jquery-user-manager/
