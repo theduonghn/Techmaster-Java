@@ -2,13 +2,6 @@ import java.util.Arrays;
 
 public class Bai088 {
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (m == 0) {
-            // nums1 is empty, so the merged array will equal to nums2
-            for (int i = 0; i < n; i++) {
-                nums1[i] = nums2[i];
-            }
-            return;
-        }
         int i = m - 1;
         for (int k = 0; k < n;) {
             if (i < 0) {
