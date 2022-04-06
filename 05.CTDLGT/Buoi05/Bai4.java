@@ -8,8 +8,17 @@ public class Bai4 {
         print(a, n + 1);
     }
 
+    public static void printRow(int[][] a, int n) {
+        if (n == a.length - 1) {
+            print(a[n], 0);
+            return;
+        }
+        print(a[n], 0);
+        printRow(a, n + 1);
+    }
+
     public static void main(String[] args) {
-        int[] a = { 1, 5, 6, 8, 9 };
-        print(a, 0);
+        int[][] a = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
+        printRow(a, 0);
     }
 }
