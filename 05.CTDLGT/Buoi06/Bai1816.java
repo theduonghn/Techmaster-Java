@@ -1,5 +1,3 @@
-import javax.xml.namespace.QName;
-
 public class Bai1816 {
     public String truncateSentence(String s, int k) {
         String result = "";
