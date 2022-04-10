@@ -19,4 +19,11 @@ public class Bai2114 {
         }
         return count + 1;
     }
+
+    public static void main(String[] args) {
+        System.out.println(mostWordsFound(
+                new String[] { "alice and bob love leetcode", "i think so too", "this is great thanks very much" })); // 6
+        System.out.println(mostWordsFound(
+                new String[] { "please wait", "continue to fight", "continue to win" })); // 3
+    }
 }

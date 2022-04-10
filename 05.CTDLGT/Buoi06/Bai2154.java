@@ -17,4 +17,9 @@ public class Bai2154 {
         }
         return -1;
     }
+
+    public static void main(String[] args) {
+        System.out.println(findFinalValue(new int[] { 5, 3, 6, 1, 12 }, 3)); // 24
+        System.out.println(findFinalValue(new int[] { 2, 7, 9 }, 4)); // 4
+    }
 }
