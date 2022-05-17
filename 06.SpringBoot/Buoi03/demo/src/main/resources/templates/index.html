@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <div th:text="${name + ': ' + age + ' years old'}">name: age</div>
+    <div th:text="${name + ' is learning Spring Boot'}">name</div>
+    <div th:text="${'Tac pham ' + book.title + ' cua tac gia ' + book.author}">
+      book
+    </div>
+    <div th:text="|Tac pham ${book.title} cua tac gia ${book.author}|">
+      book
+    </div>
+    <div th:utext="${message}"></div>
+
+    <div>
+      <ul>
+        <li><a href="/text">Variable expression</a></li>
+        <li><a th:href="@{/about}">Absolute link</a></li>
+        <li><a th:href="@{/query(foo='bar',tom='jerry')}">Query link</a></li>
+        <li><a th:href="@{/add(a=1,b=2)}">Add a and b</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </div>
+  </body>
+</html>
