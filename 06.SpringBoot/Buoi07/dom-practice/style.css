@@ -1,0 +1,15 @@
+.color-red {
+  color: red;
+}
+
+.color-blue {
+  color: blue;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: bold;
+}
