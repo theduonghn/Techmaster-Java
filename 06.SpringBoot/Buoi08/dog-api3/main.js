@@ -1,34 +1,61 @@
-const img = document.getElementById("image");
-const selectBreed = document.getElementById("breed-list");
+const imgElement = document.getElementById("image");
+const breedSelectElement = document.getElementById("breed-list");
+const getSubBreedsBtnElement = document.getElementById("btn-get-sub-breeds");
+const subBreedsListElement = document.getElementById("sub-breeds");
 
-const getBreedList = async () => {
+// Handle events
+getSubBreedsBtnElement.addEventListener("click", () => showSubBreeds());
+
+const showBreeds = async () => {
   try {
-    let res = await axios.get("https://dog.ceo/api/breeds/list/all");
-    let breeds = res.data.message;
-    console.log(breeds);
-    showBreedList(breeds);
+    const res = await axios.get("https://dog.ceo/api/breeds/list/all");
+    const breeds = Object.keys(res.data.message);
+    fillBreedsData(breeds);
   } catch (error) {
     console.log(error);
   }
 };
 
-const showBreedList = (obj) => {
-  //   const option = document.createElement("option");
-  //   Object.keys(obj).forEach((breed) => {
-  // const breedOption = option.cloneNode(true);
-  // breedOption.innerText = breed;
-  // breedOption.value = breed;
-  // selectBreed.append(breedOption);
-
-  //   });
-
-  let keys = Object.keys(obj);
+const fillBreedsData = (breeds) => {
   let html = "";
-  for (let i = 0; i < keys.length; i++) {
-    const breed = keys[i];
-    html += `<option value = ${breed}>${breed}</option>`;
+  for (const breed of breeds) {
+    html += `<option value=${breed}>${breed}</option>`;
   }
-  selectBreed.innerHTML = html;
+  breedSelectElement.innerHTML = html;
 };
 
-window.onload = getBreedList();
+const showSubBreeds = async () => {
+  try {
+    const breed = breedSelectElement.value;
+    const res = await axios.get(`https://dog.ceo/api/breed/${breed}/list`);
+    const subBreeds = res.data.message;
+    fillSubBreedsData(breed, subBreeds);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const fillSubBreedsData = (breed, subBreeds) => {
+  if (Array.isArray(subBreeds) && subBreeds.length) {
+    let html = "";
+    for (const subBreed of subBreeds) {
+      html += `<li><a href="#" onclick="showRandomImageBySubBreed('${breed}', '${subBreed}')">${subBreed}</a></li>`;
+    }
+    subBreedsListElement.innerHTML = html;
+  } else {
+    subBreedsListElement.innerHTML = `<li>Không có sub breed</li>`;
+  }
+};
+
+const showRandomImageBySubBreed = async (breed, subBreed) => {
+  try {
+    const res = await axios.get(
+      `https://dog.ceo/api/breed/${breed}/${subBreed}/images/random`
+    );
+    imgElement.src = res.data.message;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+window.onload = showBreeds();

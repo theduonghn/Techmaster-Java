@@ -20,8 +20,7 @@ const getProvinces = async () => {
 
 const showProvinces = (provinces) => {
   let html = `<option value="" hidden>---</option>`;
-  for (let i = 0; i < provinces.length; i++) {
-    let province = provinces[i];
+  for (const province of provinces) {
     html += `<option value=${province.code}>${province.name}</option>`;
   }
   selectProvince.innerHTML = html;
@@ -41,8 +40,7 @@ const getDistricts = async () => {
 
 const showDistricts = (districts) => {
   let html = `<option value="" hidden>---</option>`;
-  for (let i = 0; i < districts.length; i++) {
-    let district = districts[i];
+  for (const district of districts) {
     html += `<option value=${district.code}>${district.name}</option>`;
   }
   selectDistrict.innerHTML = html;
@@ -62,8 +60,7 @@ const getWards = async () => {
 
 const showWards = (wards) => {
   let html = `<option value="" hidden>---</option>`;
-  for (let i = 0; i < wards.length; i++) {
-    let ward = wards[i];
+  for (const ward of wards) {
     html += `<option value=${ward.code}>${ward.name}</option>`;
   }
   selectWard.innerHTML = html;
