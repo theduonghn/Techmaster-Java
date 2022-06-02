@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <div>
+        <label for="weight">Weight</label>
+        <input id="weight" type="number" min="0" step="0.001" />
+      </div>
+      <div>
+        <label for="heght">Height</label>
+        <input id="height" type="number" min="0" step="0.001" />
+      </div>
+      <button id="bmi-get">BMI GET</button>
+      <button id="bmi-post">BMI POST</button>
+    </form>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
