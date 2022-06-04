@@ -150,3 +150,7 @@ https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/province-api/
 ### Random color, BMI, Login
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi09
+
+### ToDo app
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi10
