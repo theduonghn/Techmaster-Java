@@ -68,75 +68,85 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi13/Libr
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/Buoi13/AdditionalHomework/Cau2
 
-### Project
+### Project Movie Manager
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/02.Java-core/ProjectMovieManager
 
 ## Database
 
-### Bài 1
+### Create database blog
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/database%20blog
+
+### Create database movie
+
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi01/database%20movie
 
-### Bài 2
+### Create and insert data into database shoe
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi02/database%20shoe
 
-### Bài 3
+### Create and insert data into database library
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi03/database%20library
 
-### Bài 4
+### Query database sakila
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi04/query%20database%20library%20and%20sakila/query.md
 
-### Bài 5
+### Create and insert data into database quiz
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi05/database%20quiz/quiz.md
 
-### Bài 7
+### jdbc blog
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi07/jdbc_blog2
+
+### jdbc user
+
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/Buoi07/jdbc_user
 
-### Đồ án
+### Project Ecommerce
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/03.Database/ProjectEcommerce
 
 ## JavaScript
 
-### Bài 1
+### Homework 1
 
-https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi01/homework1
+https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi01/homework1/
 
-### Bài 2
-
-https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi02/control-flow
-
-### Bài 3
-
-https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi03/homework
-
-### Bài 4
-
-https://github.com/theduonghn/Techmaster-Java/tree/main/04.JavaScript/Buoi04/javascript-array
-
-### Bài 5
+### BMI Calculator
 
 https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi05/homework1
+
+### Tip Calculator
+
 https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi05/homework2
 
-### Bài 6
+### jQuery ToDo
 
 https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi06/jquery-todo
 
-### Bài 7
+### jQuery Product Show
 
 https://theduonghn.github.io/Techmaster-Java/04.JavaScript/Buoi07/jquery-product-show
 
-### User Manager
+### jQuery User Show
 
 https://theduonghn.github.io/Techmaster-Java/04.JavaScript/jquery-user-manager/
 
 ## Spring Boot
+
+### Dog API
+
+https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/dog-api/
+https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/dog-api3/
+
+### Province API
+
+https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/province-api/
+
+### Random color, BMI, Login
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi09
