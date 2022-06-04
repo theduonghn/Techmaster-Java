@@ -15,7 +15,7 @@ public class HandleException {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorMessage handleBadRequestException(BadRequestException e) {
         // Log lỗi ở đây
-        log.error("Please fix bugs");
+        log.error("Exception occurs!");
         // Log lỗi ra file
         return new ErrorMessage(HttpStatus.BAD_REQUEST, e.getMessage());
     }
@@ -25,9 +25,19 @@ public class HandleException {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorMessage handleNotFoundException(NotFoundException e) {
         // Log lỗi ở đây
-        log.error("Please fix bugs");
+        log.error("Exception occurs!");
         // Log lỗi ra file
         return new ErrorMessage(HttpStatus.NOT_FOUND, e.getMessage());
+    }
+
+    // Xử lý cho trường hợp Login failed
+    @ExceptionHandler(LoginFailedException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ErrorMessage handleLoginFailedException(LoginFailedException e) {
+        // Log lỗi ở đây
+        log.error("Exception occurs!");
+        // Log lỗi ra file
+        return new ErrorMessage(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
 
     // Xử lý cho các trường hợp còn lại
@@ -35,7 +45,7 @@ public class HandleException {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorMessage handleOtherException(Exception e) {
         // Log lỗi ở đây
-        log.error("Please fix bugs");
+        log.error("Exception occurs!");
         // Log lỗi ra file
         return new ErrorMessage(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
     }
