@@ -1,6 +1,6 @@
 # Techmaster-Java
 
-## Web căn bản
+## Web Fundamentals
 
 ### Hanoi foods
 
