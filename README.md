@@ -10,7 +10,7 @@ https://theduonghn.github.io/Techmaster-Java/01.Web-can-ban/Buoi01/homework/hano
 
 https://theduonghn.github.io/Techmaster-Java/01.Web-can-ban/Buoi02/homework/bridges/cau_ki_luc.html
 
-### Vuighe clone
+### vuighe clone
 
 https://theduonghn.github.io/Techmaster-Java/01.Web-can-ban/Buoi03/homework/vuighe
 
@@ -140,7 +140,7 @@ https://theduonghn.github.io/Techmaster-Java/04.JavaScript/jquery-user-manager/
 
 ### Dog API
 
-https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/dog-api/
+https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/dog-api/  
 https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/dog-api3/
 
 ### Province API
