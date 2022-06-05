@@ -7,6 +7,14 @@ const todoListElement = document.querySelector(".todo-list");
 const todoOptionItemElements = document.querySelectorAll(
   ".todo-option-item input"
 );
+const todoInputElement = document.getElementById("todo-input");
+const btnAddElement = document.getElementById("btn-add");
+const btnUpdateElement = document.getElementById("btn-update");
+
+// Xử lý sự kiện
+btnAddElement.addEventListener("click", () =>
+  createTodo(todoInputElement.value)
+);
 
 // Danh sách API
 const getTodoApi = (status) => {
@@ -71,6 +79,7 @@ const renderTodo = (arr) => {
                     </div>
                     <div class="option">
                         <button class="btn btn-update"
+                        onclick="inputTodoTitle(${t.id})"
                         >
                             <img src="./img/pencil.svg" alt="icon" />
                         </button>
@@ -129,4 +138,55 @@ todoOptionItemElements.forEach((input) => {
   });
 });
 
+const createTodo = async (title) => {
+  title = title.trim();
+  if (title === "") {
+    clearInput();
+    return;
+  }
+  try {
+    const res = await createTodoApi(title);
+    const todo = res.data;
+    todos.push(todo);
+    renderTodo(todos);
+    clearInput();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const inputTodoTitle = (id) => {
+  let todo = todos.find((t) => t.id == id);
+  todoInputElement.value = todo.title;
+  btnUpdateElement.style.display = "inline-block";
+  btnAddElement.style.display = "none";
+  btnUpdateElement.addEventListener("click", function () {
+    updateTodoTitle(todo, todoInputElement.value);
+    btnUpdateElement.style.display = "none";
+    btnAddElement.style.display = "inline-block";
+    btnUpdateElement.removeEventListener("click");
+  });
+};
+
+const updateTodoTitle = async (todo, newTitle) => {
+  let title = newTitle.trim();
+  if (title === "") {
+    clearInput();
+    return;
+  }
+  todo.title = title;
+  try {
+    await updateTodoApi(todo);
+    renderTodo(todos);
+    clearInput();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+function clearInput() {
+  todoInputElement.value = "";
+}
+
+// Main
 getTodos();
