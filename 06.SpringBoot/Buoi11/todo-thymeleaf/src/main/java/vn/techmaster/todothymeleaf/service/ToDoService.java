@@ -1,4 +1,4 @@
-package vn.techmaster.todobackend.service;
+package vn.techmaster.todothymeleaf.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import vn.techmaster.todobackend.exception.NotFoundException;
-import vn.techmaster.todobackend.model.ToDo;
-import vn.techmaster.todobackend.request.CreateToDoRequest;
-import vn.techmaster.todobackend.request.UpdateToDoRequest;
+import vn.techmaster.todothymeleaf.exception.NotFoundException;
+import vn.techmaster.todothymeleaf.model.ToDo;
+import vn.techmaster.todothymeleaf.request.CreateToDoRequest;
+import vn.techmaster.todothymeleaf.request.UpdateToDoRequest;
 
 @Service
 public class ToDoService {

@@ -1,6 +1,4 @@
-const URL_API = "http://localhost:8080/api/v1";
-
-let todos = [];
+const URL_API = "/api/v1";
 
 // Truy cập vào các thành phần
 const todoListElement = document.querySelector(".todo-list");
@@ -186,6 +184,3 @@ const updateTodoTitle = async (todo, newTitle) => {
 function clearInput() {
   todoInputElement.value = "";
 }
-
-// Main
-getTodos();

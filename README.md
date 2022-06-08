@@ -151,6 +151,10 @@ https://theduonghn.github.io/Techmaster-Java/06.SpringBoot/Buoi08/province-api/
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi09
 
-### ToDo app
+### ToDo app - client side rendering
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi10
+
+### ToDo app - server side rendering
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi11/todo-thymeleaf
