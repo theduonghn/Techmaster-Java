@@ -4,11 +4,61 @@ const URL_API = "http://localhost:8080/api/v1";
 let params = new URLSearchParams(window.location.search);
 let id = params.get("id");
 
-// Elements
+// BEGIN Elements
 const nameElement = document.getElementById("name");
 const emailElement = document.getElementById("email");
 const phoneElement = document.getElementById("phone");
 const addressElement = document.getElementById("address");
+const btnSaveElement = document.getElementById("btn-save");
+
+const oldPasswordElement = document.getElementById("old-password");
+const newPasswordElement = document.getElementById("new-password");
+const btnChangePasswordElement = document.getElementById("btn-change-password");
+
+const btnForgotPasswordElement = document.getElementById("btn-forgot-password");
+// END Elements
+
+// BEGIN Handle events
+btnSaveElement.addEventListener("click", async function () {
+  try {
+    let res = await axios.put(`${URL_API}/users/${id}`, {
+      name: nameElement.value,
+      phone: phoneElement.value,
+      address: addressElement.value,
+    });
+    if (res.data) {
+      window.location.href = "/";
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+btnChangePasswordElement.addEventListener("click", async function () {
+  try {
+    await axios.put(`${URL_API}/users/${id}/update-password`, {
+      oldPassword: oldPasswordElement.value,
+      newPassword: newPasswordElement.value,
+    });
+    alert("Đổi mật khẩu thành công");
+  } catch (error) {
+    let message = error.response.data.message;
+    alert(message);
+  } finally {
+    oldPasswordElement.value = "";
+    newPasswordElement.value = "";
+  }
+});
+
+btnForgotPasswordElement.addEventListener("click", async function () {
+  try {
+    let res = await axios.put(`${URL_API}/users/${id}/forgot-password`);
+    alert(`Mật khẩu mới là: ${res.data}`);
+  } catch (error) {
+    console.log(error);
+  }
+});
+// END Handle events
 
 // Lấy thông tin user
 const getUser = async (id) => {
