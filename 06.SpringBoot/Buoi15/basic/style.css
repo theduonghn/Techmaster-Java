@@ -1,0 +1,36 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  background-color: #30598c;
+}
+
+.header .navbar {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.navbar-brand img {
+  width: 120px;
+}
+
+.course {
+  background-color: #f5faff;
+}
+
+.footer {
+  background-color: #30598c;
+}
+
+.footer-item p {
+  font-size: 14px;
+}
+
+.footer-item h5 {
+  font-size: 18px;
+}
