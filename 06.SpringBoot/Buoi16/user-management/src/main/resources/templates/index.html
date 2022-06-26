@@ -9,8 +9,15 @@
 
   <body>
     <h1>Home page</h1>
-    <a href="/login">Login</a>
-    <a href="/logout">Logout</a>
-    <a href="/register">Register</a>
+
+    <th:block th:if="${user != null}">
+      <a href="/logout" th:text="|Logout as ${user.fullName}|">Logout</a>
+      <a href="/admin">Admin</a>
+    </th:block>
+
+    <th:block th:if="${user == null}">
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    </th:block>
   </body>
 </html>
