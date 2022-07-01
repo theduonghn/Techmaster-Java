@@ -3,11 +3,16 @@ package vn.techmaster.jobhunt.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import vn.techmaster.jobhunt.model.Employer;
 import vn.techmaster.jobhunt.repository.EmployerRepo;
+import vn.techmaster.jobhunt.request.EmployerRequest;
 
 @Controller
 @RequestMapping(value = "/employer")
@@ -25,5 +30,23 @@ public class EmployerController {
     public String showEmployerDetailById(Model model, @PathVariable String id) {
         model.addAttribute("employer", employerRepo.findById(id));
         return "employer";
+    }
+
+    @GetMapping(value = "/add")
+    public String addEmployerForm(Model model) {
+        model.addAttribute("employer", new EmployerRequest("", "", "", "", null));
+        return "employer_add";
+    }
+
+    @PostMapping(value = "/add", consumes = { "multipart/form-data" })
+    public String addEmployer(
+            @ModelAttribute EmployerRequest employerRequest,
+            BindingResult result,
+            Model model) {
+        if (result.hasErrors()) {
+            return "employer_add";
+        }
+        System.out.println(employerRequest);
+        return "redirect:/employers";
     }
 }
