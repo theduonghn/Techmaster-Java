@@ -1,27 +1,16 @@
 package vn.techmaster.demo.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -63,7 +52,10 @@ public class Blog {
     private User user;
 
     @ManyToMany
-    private List<Category> categories;
+    @JoinTable(name = "blog_categories",
+            joinColumns = @JoinColumn(name = "blog_id"),
+            inverseJoinColumns = @JoinColumn(name = "categories_id"))
+    private List<Category> categories = new ArrayList<>();
 
     @PrePersist
     public void prePersist() {

@@ -1,29 +1,16 @@
 package vn.techmaster.demo;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import org.hibernate.annotations.SourceType;
+import com.github.javafaker.Faker;
+import com.github.slugify.Slugify;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import vn.techmaster.demo.entity.*;
+import vn.techmaster.demo.repository.*;
 
-import com.github.javafaker.Faker;
-import com.github.slugify.Slugify;
-
-import vn.techmaster.demo.entity.Blog;
-import vn.techmaster.demo.entity.Category;
-import vn.techmaster.demo.entity.Comment;
-import vn.techmaster.demo.entity.IdentityCard;
-import vn.techmaster.demo.entity.Image;
-import vn.techmaster.demo.entity.User;
-import vn.techmaster.demo.repository.BlogRepository;
-import vn.techmaster.demo.repository.CategoryRepository;
-import vn.techmaster.demo.repository.CommentRepository;
-import vn.techmaster.demo.repository.IdentityCardRepository;
-import vn.techmaster.demo.repository.ImageRepository;
-import vn.techmaster.demo.repository.UserRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 // @DataJpaTest
 // @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -59,12 +46,8 @@ public class InitDataTest {
     @Test
     void saveUserIdentityCard() {
         for (int i = 0; i < 10; i++) {
-            User user = User.builder()
-                    .name(faker.name().fullName())
-                    .email(faker.internet().emailAddress())
-                    .password(faker.number().digits(3))
-                    .identityCard(new IdentityCard())
-                    .build();
+            User user = User.builder().name(faker.name().fullName()).email(faker.internet().emailAddress())
+                    .password(faker.number().digits(3)).identityCard(new IdentityCard()).build();
 
             userRepository.save(user);
         }
@@ -73,9 +56,7 @@ public class InitDataTest {
     @Test
     void saveCategory() {
         for (int i = 0; i < 10; i++) {
-            Category category = Category.builder()
-                    .name(faker.leagueOfLegends().champion())
-                    .build();
+            Category category = Category.builder().name(faker.leagueOfLegends().champion()).build();
             categoryRepository.save(category);
         }
     }
@@ -87,10 +68,7 @@ public class InitDataTest {
         for (int i = 0; i < 10; i++) {
             User userRd = users.get(random.nextInt(users.size()));
 
-            Image image = Image.builder()
-                    .url(faker.internet().image())
-                    .user(userRd)
-                    .build();
+            Image image = Image.builder().url(faker.internet().image()).user(userRd).build();
 
             imageRepository.save(image);
         }
@@ -105,7 +83,12 @@ public class InitDataTest {
             User userRd = users.get(random.nextInt(users.size()));
 
             List<Image> images = imageRepository.getImageByUserId(userRd.getId());
-            String imageRd = images.get(random.nextInt(images.size())).getUrl();
+            String imageRd;
+            if (images.size() > 0) {
+                imageRd = images.get(random.nextInt(images.size())).getUrl();
+            } else {
+                imageRd = null;
+            }
 
             List<Category> categoriesRd = new ArrayList<>();
             for (int j = 0; j < 3; j++) {
@@ -117,14 +100,8 @@ public class InitDataTest {
 
             String title = faker.lorem().sentence(10);
 
-            Blog blog = Blog.builder()
-                    .title(title)
-                    .slug(slugify.slugify(title))
-                    .description(faker.lorem().sentence(50))
-                    .content(faker.lorem().sentence(200))
-                    .thumbnail(imageRd)
-                    .categories(categoriesRd)
-                    .user(userRd)
+            Blog blog = Blog.builder().title(title).slug(slugify.slugify(title)).description(faker.lorem().sentence(50))
+                    .content(faker.lorem().sentence(200)).thumbnail(imageRd).categories(categoriesRd).user(userRd)
                     .build();
 
             blogRepository.save(blog);
@@ -140,11 +117,7 @@ public class InitDataTest {
             User userRd = users.get(random.nextInt(users.size()));
             Blog blogRd = blogs.get(random.nextInt(blogs.size()));
 
-            Comment comment = Comment.builder()
-                    .content(faker.lorem().sentence(20))
-                    .user(userRd)
-                    .blog(blogRd)
-                    .build();
+            Comment comment = Comment.builder().content(faker.lorem().sentence(20)).user(userRd).blog(blogRd).build();
 
             commentRepository.save(comment);
         }
