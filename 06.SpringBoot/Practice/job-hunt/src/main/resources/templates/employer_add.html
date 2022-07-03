@@ -1,58 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add new employer</title>
-  </head>
+  <head th:replace="template.html :: header('Add employer')"></head>
+
   <body>
-    <h1>Add new employer</h1>
-    <form
-      action="#"
-      th:action="@{/employer/add}"
-      method="post"
-      enctype="multipart/form-data"
-      name="employer"
-      th:object="${employer}"
-    >
-      Name
-      <input
-        type="text"
-        class="form-control"
-        autocomplete="off"
-        th:field="*{name}"
-      />
-      <br />
-      <br />
-      Website
-      <input
-        type="text"
-        class="form-control"
-        autocomplete="off"
-        th:field="*{website}"
-      />
-      <br />
-      <br />
-      Email
-      <input
-        type="email"
-        class="form-control"
-        autocomplete="off"
-        th:field="*{email}"
-      />
-      <br />
-      <br />
-      Logo
-      <input
-        type="file"
-        class="form-control"
-        autocomplete="off"
-        th:field="*{logo}"
-      />
-      <br />
-      <br />
-      <button class="btn btn-primary mt-3">Save</button>
-    </form>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a href="/employer" class="navbar-brand">List Employers</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 nt-5">
+          <form
+            action="#"
+            th:action="@{/employer/add}"
+            method="post"
+            enctype="multipart/form-data"
+            name="employer"
+            th:object="${employer}"
+          >
+            <div class="form-group row mt-3">
+              <label for="name" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  autocomplete="off"
+                  th:field="*{name}"
+                />
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('name')}"
+                th:errors="*{name}"
+              >
+                Name Error
+              </div>
+            </div>
+
+            <div class="form-group row mt-3">
+              <label for="website" class="col-sm-2 col-form-label"
+                >Website</label
+              >
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  autocomplete="off"
+                  th:field="*{website}"
+                />
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('website')}"
+                th:errors="*{website}"
+              >
+                Website Error
+              </div>
+            </div>
+
+            <div class="form-group row mt-3">
+              <label for="email" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  autocomplete="off"
+                  th:field="*{email}"
+                />
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('email')}"
+                th:errors="*{email}"
+              >
+                Email Error
+              </div>
+            </div>
+
+            <div class="form-group row mt-3">
+              <label for="logo" class="col-sm-2 col-form-label">
+                Select a logo
+              </label>
+              <div class="col-sm-4">
+                <input
+                  type="file"
+                  class="form-control"
+                  autocomplete="off"
+                  th:field="*{logo}"
+                />
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('logo')}"
+                th:errors="*{logo}"
+              >
+                Logo Error
+              </div>
+            </div>
+
+            <button class="btn btn-primary mt-3">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

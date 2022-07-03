@@ -25,7 +25,7 @@ public class StorageService {
         // Lấy extension
         String extension = getFileExtension(file.getOriginalFilename());
 
-        String newFileName = path + id + "." + extension;
+        String newFileName = path + "/" + id + "." + extension;
         try {
             var is = file.getInputStream();
             Files.copy(is, Paths.get(newFileName), StandardCopyOption.REPLACE_EXISTING);

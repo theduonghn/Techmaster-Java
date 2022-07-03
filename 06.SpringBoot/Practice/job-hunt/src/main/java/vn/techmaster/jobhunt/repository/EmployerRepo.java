@@ -34,6 +34,12 @@ public class EmployerRepo {
         return employers.get(id);
     }
 
+    public void updateLogo(String id, String logo_path) {
+        var emp = employers.get(id);
+        emp.setLogo_path(logo_path);
+        employers.put(id, emp);
+    }
+
     @PostConstruct
     public void addSomeData() {
         this.add(Employer.builder()
