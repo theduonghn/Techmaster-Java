@@ -40,6 +40,10 @@ public class EmployerRepo {
         employers.put(id, emp);
     }
 
+    public Employer deleteById(String id) {
+        return employers.remove(id);
+    }
+
     @PostConstruct
     public void addSomeData() {
         this.add(Employer.builder()

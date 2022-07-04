@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="template.html :: header('Add new job')"></head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a href="/job" class="navbar-brand">List jobs</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 nt-5">
+          <form
+            action="#"
+            th:action="@{/job/add}"
+            method="post"
+            name="job"
+            th:object="${job}"
+          >
+            <div class="form-group row mt-3">
+              <label for="title" class="col-sm-2 col-form-label">Title</label>
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  autocomplete="off"
+                  th:field="*{title}"
+                />
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('title')}"
+                th:errors="*{title}"
+              >
+                Title Error
+              </div>
+            </div>
+
+            <div class="form-group row mt-3">
+              <label for="description" class="col-sm-2 col-form-label"
+                >Description</label
+              >
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  autocomplete="off"
+                  th:field="*{description}"
+                />
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('description')}"
+                th:errors="*{description}"
+              >
+                Description Error
+              </div>
+            </div>
+
+            <div class="form-group row mt-3">
+              <label for="city" class="col-sm-2 col-form-label">City</label>
+              <div class="col-sm-4">
+                <select name="city" id="">
+                  <option
+                    th:each="city : ${cities}"
+                    th:text="${city.label}"
+                    th:value="${city}"
+                  >
+                    City
+                  </option>
+                </select>
+              </div>
+              <div
+                class="text-danger"
+                th:if="${#fields.hasErrors('description')}"
+                th:errors="*{description}"
+              >
+                Description Error
+              </div>
+            </div>
+
+            <input type="hidden" th:field="*{emp_id}" />
+
+            <button class="btn btn-primary mt-3">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

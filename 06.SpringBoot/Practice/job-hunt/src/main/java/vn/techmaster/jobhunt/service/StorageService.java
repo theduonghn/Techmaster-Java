@@ -36,6 +36,16 @@ public class StorageService {
         }
     }
 
+    public void deleteFile(String logoPath) {
+        String filePath = path + "/" + logoPath;
+        try {
+            Files.deleteIfExists(Paths.get(filePath));
+        } catch (IOException e) {
+            var msg = String.format("Failed to delete file %s", filePath);
+            throw new StorageException(msg, e);
+        }
+    }
+
     /*
      * Bóc tách file extension từ file name.
      * Ví dụ

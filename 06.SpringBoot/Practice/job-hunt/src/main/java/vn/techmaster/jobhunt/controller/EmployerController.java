@@ -80,4 +80,11 @@ public class EmployerController {
 
         return "redirect:/employer";
     }
+
+    @GetMapping(value = "/delete/{id}")
+    public String deleteEmployerById(@PathVariable String id) {
+        Employer emp = employerRepo.deleteById(id);
+        storageService.deleteFile(emp.getLogo_path());
+        return "redirect:/employer";
+    }
 }

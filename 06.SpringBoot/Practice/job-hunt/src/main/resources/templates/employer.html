@@ -9,5 +9,9 @@
   <body>
     <h1 th:text="${employer.name}">Employer</h1>
     <img th:src="|/logo/${employer.logo_path}|" alt="" width="200px" />
+    <p>
+      <a th:href="|/job/add?emp_id=${employer.id}|">Add new job</a>
+      <a th:href="|/employer/delete/${employer.id}|">Delete</a>
+    </p>
   </body>
 </html>
