@@ -28,6 +28,7 @@ public class Course {
     @Column(name = "type", nullable = false)
     private String type;
 
+    @Lob
     @Column(name = "description")
     private String description;
 

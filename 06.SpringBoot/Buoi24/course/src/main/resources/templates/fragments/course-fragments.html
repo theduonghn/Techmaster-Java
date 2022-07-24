@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Danh sách khóa học</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<div th:fragment="header" class="header d-flex align-items-center">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="logo">
+                <a th:href="@{/courses}">
+                    <img src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <a class="text-white text-uppercase ms-5" th:href="@{/courses/course-onlab-list}">Phòng lab</a>
+                <a class="text-white text-uppercase ms-3" th:href="@{/courses/course-online-list}">Trực tuyến</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="course-container" class="course-container mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="fs-5 mb-4">Chủ đề</h2>
+                <div class="topic-item input-group d-flex align-items-center mb-1">
+                    <input onclick="clearFilterByTopic()" th:checked="${topicId == null}"
+                           type="radio" id="topic-all" name="topic">
+                    <label for="topic-all" class="ms-2 fs-5">Tất cả chủ đề</label>
+                </div>
+                <div th:each="topic : ${topics}" class="topic-item input-group d-flex align-items-center mb-1">
+                    <input th:onclick="|filterByTopic(${topic.id})|" th:checked="${topic.id == topicId}"
+                           type="radio" th:id="${topic.id}" name="topic">
+                    <label th:text="${topic.name}" th:for="${topic.id}" class="ms-2 fs-5">Lập trình Backend</label>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="seach-form d-flex align-items-center rounded shadow-sm mb-4 pe-3">
+                            <input th:value="${name}" class="form-control border-0 seach-form-input">
+                            <span class="text-black-50 seach-form-button"><i
+                                    class="fa-solid fa-magnifying-glass"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-list row">
+                    <th:block th:if="${#lists.isEmpty(courses)}">
+                        Không tìm thấy khoá học nào
+                    </th:block>
+                    <th:block th:unless="${#lists.isEmpty(courses)}">
+                        <div th:each="course : ${courses}" class="col-md-4">
+                            <a th:href="|/courses/${course.id}/${course.slug}|">
+                                <div class="course-item shadow-sm rounded mb-4">
+                                    <div class="course-item-image">
+                                        <img th:src="${course.thumbnail}"
+                                             alt="khoa hoc">
+                                    </div>
+                                    <div class="course-item-info p-3">
+                                        <h2 class="fs-5 mb-3 text-dark" th:text="${course.name}">Spring Boot - Web Back
+                                            End</h2>
+                                        <p class="type fw-light text-black-50" th:text="${course.type}">Trực tuyến</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block th:fragment="scripts">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script th:src="@{/js/course.js}"></script>
+</th:block>
+</body>
+
+</html>
