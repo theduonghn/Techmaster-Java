@@ -4,15 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.techmaster.course.exception.NotFoundException;
 import vn.techmaster.course.model.Course;
+import vn.techmaster.course.model.Topic;
 import vn.techmaster.course.repository.CourseRepository;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
 public class CourseService {
     @Autowired
     private CourseRepository courseRepository;
+
+    public String showTopics(Course course) {
+        return String.join(", ", course.getTopics().stream().map(Topic::getName).toList());
+    }
 
     public List<Course> findAll() {
         return courseRepository.findAll();

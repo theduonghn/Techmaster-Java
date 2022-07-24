@@ -26,7 +26,7 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
     List<Course> findByTypeAndName(String type, String name);
 
     @Query("select c from Course c inner join c.topics topics where c.type = ?1 and topics.id = ?2")
-    List<Course> findByTypeAndTopicId(String type, Integer id);
+    List<Course> findByTypeAndTopicId(String type, Integer topicId);
 
 
 }
