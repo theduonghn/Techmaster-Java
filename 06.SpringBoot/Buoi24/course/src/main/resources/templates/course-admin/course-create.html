@@ -28,40 +28,38 @@
                     <div class="col-md-8">
                         <div class="mb-3">
                             <label for="course-name" class="form-label fw-bold">Tên khóa học</label>
-                            <input type="text" class="form-control" id="course-name">
+                            <input th:field="*{name}" type="text" class="form-control" id="course-name">
                         </div>
                         <div class="mb-3">
                             <label for="course-description" class="form-label fw-bold">Mô tả</label>
-                            <textarea class="form-control" id="course-description" rows="10"></textarea>
+                            <textarea th:field="*{description}" class="form-control" id="course-description"
+                                      rows="10"></textarea>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label for="course-type" class="form-label fw-bold">Hình thức học</label>
-                            <select class="form-control" id="course-type">
-                                <option hidden>- Chọn hình thức học</option>
-                                <option value="online">Online</option>
-                                <option value="onlab">Onlab</option>
+                            <select th:field="*{type}" class="form-control" id="course-type">
+                                <option hidden value="">- Chọn hình thức học</option>
+                                <option th:value="online">Online</option>
+                                <option th:value="onlab">Onlab</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="course-topic" class="form-label fw-bold">Chủ đề</label>
-                            <select class="form-control" id="course-topic" multiple="multiple">
-                                <option value="1">Backend</option>
-                                <option value="2">Frontend</option>
-                                <option value="3">Mobile</option>
-                                <option value="4">Lập trình web</option>
-                                <option value="5">Database</option>
-                                <option value="6">Devops</option>
+                            <select th:field="*{topics}" class="form-control" id="course-topic" multiple="multiple">
+                                <option th:each="topic : ${topics}" th:value="${topic.id}" th:text="${topic.name}">
+                                    Backend
+                                </option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="course-supporter" class="form-label fw-bold">Tư vấn viên</label>
-                            <select class="form-control" id="course-supporter">
-                                <option hidden>- Chọn tư vấn viên</option>
-                                <option value="1">Nguyễn Văn A</option>
-                                <option value="2">Trần Văn B</option>
-                                <option value="3">Ngô Thị C</option>
+                            <select th:field="*{supporter}" class="form-control" id="course-supporter">
+                                <option hidden value="">- Chọn tư vấn viên</option>
+                                <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.name}">Nguyễn
+                                    Văn A
+                                </option>
                             </select>
                         </div>
                     </div>

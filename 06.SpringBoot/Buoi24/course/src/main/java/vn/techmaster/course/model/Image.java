@@ -17,7 +17,7 @@ public class Image {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "link", nullable = false, unique = true)
+    @Column(name = "link", unique = true)
     private String link;
 
 }

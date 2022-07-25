@@ -1,11 +1,13 @@
 package vn.techmaster.course.service;
 
+import com.github.slugify.Slugify;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.techmaster.course.exception.NotFoundException;
 import vn.techmaster.course.model.Course;
 import vn.techmaster.course.model.Topic;
 import vn.techmaster.course.repository.CourseRepository;
+import vn.techmaster.course.request.CourseEditRequest;
 
 import java.util.List;
 
@@ -13,6 +15,8 @@ import java.util.List;
 public class CourseService {
     @Autowired
     private CourseRepository courseRepository;
+    @Autowired
+    private Slugify slugify;
 
     public String showTopics(Course course) {
         return String.join(", ", course.getTopics().stream().map(Topic::getName).toList());
@@ -23,6 +27,12 @@ public class CourseService {
     }
 
     public Course add(Course course) {
+        course.setSlug(slugify.slugify(course.getName()));
+        return courseRepository.save(course);
+    }
+
+    public Course update(Course course) {
+        course.setSlug(slugify.slugify(course.getName()));
         return courseRepository.save(course);
     }
 
@@ -75,4 +85,38 @@ public class CourseService {
     }
 
 
+    public CourseEditRequest toEditRequest(Course course) {
+        return CourseEditRequest.builder()
+                .id(course.getId())
+                .name(course.getName())
+                .slug(course.getSlug())
+                .type(course.getType())
+                .description(course.getDescription())
+                .thumbnail(course.getThumbnail())
+                .supporter(course.getSupporter())
+                .topics(course.getTopics())
+                .build();
+    }
+
+    public Course fromEditRequest(CourseEditRequest courseEditRequest) {
+        String thumbnail = courseEditRequest.getThumbnail();
+        if (thumbnail == null) {
+            thumbnail = findById(courseEditRequest.getId()).getThumbnail();
+        }
+
+        return Course.builder()
+                .id(courseEditRequest.getId())
+                .name(courseEditRequest.getName())
+                .slug(courseEditRequest.getSlug())
+                .type(courseEditRequest.getType())
+                .description(courseEditRequest.getDescription())
+                .thumbnail(thumbnail)
+                .supporter(courseEditRequest.getSupporter())
+                .topics(courseEditRequest.getTopics())
+                .build();
+    }
+
+    public void delete(Course course) {
+        courseRepository.delete(course);
+    }
 }
