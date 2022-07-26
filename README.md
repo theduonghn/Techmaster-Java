@@ -162,3 +162,7 @@ https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi11/tod
 ### User Manager - client side & sever side rendering
 
 https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi14
+
+### Course app
+
+https://github.com/theduonghn/Techmaster-Java/tree/main/06.SpringBoot/Buoi24/course
