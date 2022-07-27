@@ -31,8 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf()
-                .disable()
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/profile").hasRole("USER")
@@ -42,9 +41,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 .formLogin().loginPage("/login")
+                .loginProcessingUrl("/login-custom")
                 .usernameParameter("email")
                 .passwordParameter("pass")
-                .loginProcessingUrl("/login-custom")
                 .defaultSuccessUrl("/")
                 .permitAll()
                 .and()
