@@ -3,11 +3,10 @@ let tasks = loadTasks();
 function loadTasks() {
   let data = localStorage.getItem("tasks");
   if (data) {
-    tasks = JSON.parse(data);
+    return JSON.parse(data);
   } else {
-    tasks = [];
+    return [];
   }
-  return tasks;
 }
 
 function saveTasks() {
